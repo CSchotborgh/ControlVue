@@ -29,7 +29,6 @@ interface CoolingUnitData {
 export default function HomeView() {
   const [showInternalGrid, setShowInternalGrid] = useState(false);
   const [showCabinetSignals, setShowCabinetSignals] = useState(false);
-  const [showEventLog, setShowEventLog] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [machineActive, setMachineActive] = useState(true);
   const [controllingSupplyAir, setControllingSupplyAir] = useState(true);
@@ -188,6 +187,95 @@ export default function HomeView() {
                       {cabinetStatus.smokeSensor}
                     </Badge>
                   </div>
+                </div>
+              </div>
+
+              {/* Events Log within Cabinet Section */}
+              <div className="mt-8 pt-6 border-t border-slate-600">
+                <div className="flex justify-between items-center mb-4">
+                  <div className="text-lg font-semibold">Events Log</div>
+                  <div className="flex items-center gap-4">
+                    <div className="text-sm text-gray-400">Log Entries: 1429</div>
+                    <Button 
+                      variant="outline" 
+                      size="sm"
+                      className="border-gray-600 text-white hover:bg-gray-700"
+                    >
+                      Refresh Log
+                    </Button>
+                  </div>
+                </div>
+                
+                <div className="relative overflow-x-auto">
+                  <table className="edgerack-table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Timestamp</th>
+                        <th scope="col">Reporter</th>
+                        <th scope="col">Target</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Event</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="font-medium">2025-08-05 12:20:53</td>
+                        <td>Display</td>
+                        <td>Display</td>
+                        <td><Badge className="status-badge-blue">State</Badge></td>
+                        <td>Screen Awakened from SCREENSAVER by MOTION!</td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium">2025-08-05 09:42:48</td>
+                        <td>Website</td>
+                        <td>RCU</td>
+                        <td><Badge className="status-badge-yellow">Config</Badge></td>
+                        <td>Modified ( control-mode-setting )</td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium">2025-08-05 09:40:02</td>
+                        <td>Website</td>
+                        <td>Controller</td>
+                        <td><Badge className="status-badge-on">Auth</Badge></td>
+                        <td>User admin log in SUCCESSFUL!</td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium">2025-08-01 13:10:38</td>
+                        <td>RCU</td>
+                        <td>RCU</td>
+                        <td><Badge className="status-badge-on">State</Badge></td>
+                        <td>MODBUS has CONNECTED</td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium">2025-08-01 13:10:38</td>
+                        <td>RCU</td>
+                        <td>RCU</td>
+                        <td><Badge className="status-badge-on">State</Badge></td>
+                        <td>Machine status set to ON</td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium">2025-07-21 15:44:42</td>
+                        <td>Website</td>
+                        <td>Controller</td>
+                        <td><Badge className="status-badge-off">Auth</Badge></td>
+                        <td>User admin log in FAILED! (Invalid user/pass)</td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium">2025-07-21 12:10:41</td>
+                        <td>RCU</td>
+                        <td>Cabinet</td>
+                        <td><Badge className="status-badge-off">Alarm</Badge></td>
+                        <td>Door Open Alarm</td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium">2025-07-21 11:14:53</td>
+                        <td>Display</td>
+                        <td>RCU</td>
+                        <td><Badge className="status-badge-blue">State</Badge></td>
+                        <td>Request to modify Supply Air Target</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -349,108 +437,7 @@ export default function HomeView() {
         </div>
       </div>
 
-      {/* Events Log Section */}
-      <div className="max-h-fit my-6 grid grid-rows-1 border rounded-3xl bg-slate-800">
-        <div className="my-6 mx-2">
-          <div className="container flex flex-row">
-            <div className="flex items-start text-2xl">Events Log</div>
-            <div className="flex gap-3 flex-1 justify-end">
-              <button onClick={() => setShowEventLog(!showEventLog)}>
-                <div className="text-2xl">
-                  {showEventLog ? '[ - ]' : '[ + ]'}
-                </div>
-              </button>
-            </div>
-          </div>
-          
-          {showEventLog && (
-            <div className="transition-all duration-500 ease-in-out">
-              <div className="flex justify-between items-center mt-4 mb-4">
-                <div className="text-sm text-gray-400">Log Entries: 1429</div>
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  className="border-gray-600 text-white hover:bg-gray-700"
-                >
-                  Refresh Log
-                </Button>
-              </div>
-              
-              <div className="relative overflow-x-auto">
-                <table className="edgerack-table">
-                  <thead>
-                    <tr>
-                      <th scope="col">Timestamp</th>
-                      <th scope="col">Reporter</th>
-                      <th scope="col">Target</th>
-                      <th scope="col">Type</th>
-                      <th scope="col">Event</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="font-medium">2025-08-05 12:20:53</td>
-                      <td>Display</td>
-                      <td>Display</td>
-                      <td><Badge className="status-badge-blue">State</Badge></td>
-                      <td>Screen Awakened from SCREENSAVER by MOTION!</td>
-                    </tr>
-                    <tr>
-                      <td className="font-medium">2025-08-05 09:42:48</td>
-                      <td>Website</td>
-                      <td>RCU</td>
-                      <td><Badge className="status-badge-yellow">Config</Badge></td>
-                      <td>Modified ( control-mode-setting )</td>
-                    </tr>
-                    <tr>
-                      <td className="font-medium">2025-08-05 09:40:02</td>
-                      <td>Website</td>
-                      <td>Controller</td>
-                      <td><Badge className="status-badge-on">Auth</Badge></td>
-                      <td>User admin log in SUCCESSFUL!</td>
-                    </tr>
-                    <tr>
-                      <td className="font-medium">2025-08-01 13:10:38</td>
-                      <td>RCU</td>
-                      <td>RCU</td>
-                      <td><Badge className="status-badge-on">State</Badge></td>
-                      <td>MODBUS has CONNECTED</td>
-                    </tr>
-                    <tr>
-                      <td className="font-medium">2025-08-01 13:10:38</td>
-                      <td>RCU</td>
-                      <td>RCU</td>
-                      <td><Badge className="status-badge-on">State</Badge></td>
-                      <td>Machine status set to ON</td>
-                    </tr>
-                    <tr>
-                      <td className="font-medium">2025-07-21 15:44:42</td>
-                      <td>Website</td>
-                      <td>Controller</td>
-                      <td><Badge className="status-badge-off">Auth</Badge></td>
-                      <td>User admin log in FAILED! (Invalid user/pass)</td>
-                    </tr>
-                    <tr>
-                      <td className="font-medium">2025-07-21 12:10:41</td>
-                      <td>RCU</td>
-                      <td>Cabinet</td>
-                      <td><Badge className="status-badge-off">Alarm</Badge></td>
-                      <td>Door Open Alarm</td>
-                    </tr>
-                    <tr>
-                      <td className="font-medium">2025-07-21 11:14:53</td>
-                      <td>Display</td>
-                      <td>RCU</td>
-                      <td><Badge className="status-badge-blue">State</Badge></td>
-                      <td>Request to modify Supply Air Target</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
+
 
       {/* Networking Section */}
       <div className="max-h-fit my-6 grid grid-rows-1 border rounded-3xl bg-slate-800">
