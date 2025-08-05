@@ -312,7 +312,7 @@ export default function UpgradeView() {
       </div>
 
       {/* Update History */}
-      <Card className="bg-slate-800 border-slate-700">
+      <Card className="bg-slate-800 border-slate-700 mb-6">
         <CardHeader>
           <CardTitle className="text-white">Update History</CardTitle>
           <CardDescription className="text-gray-400">
@@ -345,6 +345,205 @@ export default function UpgradeView() {
                 ))}
               </tbody>
             </table>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Software Package Upgrading */}
+      <Card className="bg-slate-800 border-slate-700">
+        <CardHeader>
+          <CardTitle className="text-white">Software Package Upgrading:</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-6">
+          {/* File Upload Section */}
+          <div className="space-y-4">
+            <div className="flex items-center gap-4">
+              <input
+                type="file"
+                id="upgrade-file"
+                className="hidden"
+                accept=".bin,.pkg,.tar.gz,.zip"
+              />
+              <label
+                htmlFor="upgrade-file"
+                className="cursor-pointer bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded border border-slate-600"
+              >
+                Select package file...
+              </label>
+              <span className="text-gray-400 text-sm">No file chosen</span>
+            </div>
+            <Button className="bg-blue-600 hover:bg-blue-700">
+              Upload Upgrade File
+            </Button>
+          </div>
+
+          {/* Upgrade Log */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-white">Upgrade Log:</h3>
+            <div className="relative overflow-x-auto">
+              <table className="edgerack-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Start Time</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col">Hash</th>
+                    <th scope="col">Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="edgerack-monospace">2025-05-28 12:28:40</td>
+                    <td>1 min 11 sec</td>
+                    <td className="edgerack-monospace text-xs">33bf014c2b55d8a62c5a254978551c9c</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-05-27 20:30:20</td>
+                    <td>1 min 6 sec</td>
+                    <td className="edgerack-monospace text-xs">10e12138956c520c9a1e33e68b3abcd8</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-03-26 11:07:51</td>
+                    <td>1 min 5 sec</td>
+                    <td className="edgerack-monospace text-xs">3186dd1e7601747a67631ad61d864aaf</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-03-11 12:23:40</td>
+                    <td>1 min 10 sec</td>
+                    <td className="edgerack-monospace text-xs">52b585d8e28750a81b46302ea5808f20</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-02-24 19:32:05</td>
+                    <td>1 min 12 sec</td>
+                    <td className="edgerack-monospace text-xs">ec1abc41db50f16817a9e77fcdd36b15</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-02-24 18:44:49</td>
+                    <td>1 min 11 sec</td>
+                    <td className="edgerack-monospace text-xs">4c71ecaaf5c63934f17ac95ff1828029</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-02-20 14:31:29</td>
+                    <td>1 min 4 sec</td>
+                    <td className="edgerack-monospace text-xs">bc5de544fead7adf78e1a7fc560750c7</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-02-17 15:10:21</td>
+                    <td>1 min 2 sec</td>
+                    <td className="edgerack-monospace text-xs">583e51209f2627edc40710a7c20aaeab</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-02-16 16:51:08</td>
+                    <td>1 min 4 sec</td>
+                    <td className="edgerack-monospace text-xs">0d4bd2513087f3cd08f409b34f3015e0</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-02-16 16:30:04</td>
+                    <td>1 min 1 sec</td>
+                    <td className="edgerack-monospace text-xs">8845b7cccdf4fa95cd8b9629a12af699</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-02-16 12:24:09</td>
+                    <td>1 min 2 sec</td>
+                    <td className="edgerack-monospace text-xs">8438217abdddf555d89c16ac40068181</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-02-12 12:20:39</td>
+                    <td>1 min 8 sec</td>
+                    <td className="edgerack-monospace text-xs">a102e72da81c201ca1cf664edeb3f84f</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-02-07 11:03:41</td>
+                    <td>1 min 5 sec</td>
+                    <td className="edgerack-monospace text-xs">b1495bdf5095741f16acb86f247c817b</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-02-05 12:01:42</td>
+                    <td>1 min 9 sec</td>
+                    <td className="edgerack-monospace text-xs">691155f3cabc2a69e13efdc39db62e9f</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-02-05 11:29:55</td>
+                    <td>1 min 1 sec</td>
+                    <td className="edgerack-monospace text-xs">175080f13f5cf783723f6cc8c16b616b</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-02-04 23:14:24</td>
+                    <td>59 sec</td>
+                    <td className="edgerack-monospace text-xs">c42fffbe1eba5a1e7d2790bd62273990</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-01-27 07:55:27</td>
+                    <td>59 sec</td>
+                    <td className="edgerack-monospace text-xs">ef6205ba4aaa1e1a4e20093d145c8670</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-01-22 09:28:04</td>
+                    <td>58 sec</td>
+                    <td className="edgerack-monospace text-xs">6fb599f1b3a459decd2dd833bdf9fb0b</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2025-01-13 07:18:35</td>
+                    <td>57 sec</td>
+                    <td className="edgerack-monospace text-xs">723bb170aa5ac3b0a785206759a840e9</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2024-12-08 23:01:57</td>
+                    <td>1 min 6 sec</td>
+                    <td className="edgerack-monospace text-xs">1f68ff6eded186a0c0c421cbaff9cd50</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2024-09-27 03:16:35</td>
+                    <td>1 min 4 sec</td>
+                    <td className="edgerack-monospace text-xs">5beb9fae9eeb31947811fd490e37ac5a</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2024-09-19 06:16:51</td>
+                    <td>1 min 4 sec</td>
+                    <td className="edgerack-monospace text-xs">4835a578e405a659b9e2ef28200f93e6</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2024-09-05 12:35:17</td>
+                    <td>49 sec</td>
+                    <td className="edgerack-monospace text-xs">fd86ba4598c1fef483755c893f7c0fab</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2024-09-05 11:25:22</td>
+                    <td>55 sec</td>
+                    <td className="edgerack-monospace text-xs">b129753f6ece51916d63970b61d2fae3</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                  <tr>
+                    <td className="edgerack-monospace">2020-09-19 20:47:20</td>
+                    <td>1 min 5 sec</td>
+                    <td className="edgerack-monospace text-xs">f4909f580ea605a2ab3195f7b983fafb</td>
+                    <td><Badge className="status-badge-on">success</Badge></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </CardContent>
       </Card>
