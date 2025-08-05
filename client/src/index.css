@@ -65,18 +65,18 @@
   body {
     @apply antialiased bg-background text-foreground;
     font-family: 'Lato', sans-serif;
-    font-weight: 200; /* Ultra thin for body text */
+    font-weight: 400; /* Normal weight for body text */
   }
 }
 
 /* Lato Font Weight Rules */
-/* Ultra thin for body text and general content */
+/* Normal weight for body text and general content */
 body, p, span, div, td, li, .text-gray-300, .text-gray-400, .text-white {
   font-family: 'Lato', sans-serif;
-  font-weight: 200;
+  font-weight: 400;
 }
 
-/* Normal weight for titles and headers */
+/* Semi-bold weight for titles and headers */
 h1, h2, h3, h4, h5, h6, .font-semibold, .font-bold {
   font-family: 'Lato', sans-serif;
   font-weight: 600 !important;
@@ -88,13 +88,13 @@ h1, h2, h3, h4, h5, h6, .font-semibold, .font-bold {
   font-weight: 600 !important;
 }
 
-/* Ultra thin for labels and secondary text */
+/* Normal weight for labels and secondary text */
 .text-sm, .text-xs, label, .label {
   font-family: 'Lato', sans-serif;
-  font-weight: 100;
+  font-weight: 400;
 }
 
-/* Medium weight for buttons and interactive elements */
+/* Normal weight for buttons and interactive elements */
 button, .btn, .button {
   font-family: 'Lato', sans-serif;
   font-weight: 400 !important;
@@ -106,7 +106,7 @@ button, .btn, .button {
   font-weight: 400;
 }
 
-/* Status badges with medium weight */
+/* Status badges with normal weight */
 .status-badge, .status-badge-on, .status-badge-off, .status-badge-blue, .status-badge-purple, .status-badge-yellow {
   font-family: 'Lato', sans-serif;
   font-weight: 400 !important;
@@ -126,34 +126,34 @@ th, .table-label {
 
 .card-description, .CardDescription {
   font-family: 'Lato', sans-serif;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 /* Navigation elements */
 nav a, .nav-link {
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 nav a:hover, .nav-link:hover, .router-link-active {
-  font-weight: 400 !important;
+  font-weight: 600 !important;
 }
 
 /* Form elements */
 input, textarea, select {
   font-family: 'Lato', sans-serif;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 /* Alert and notification text */
 .alert, .Alert {
   font-family: 'Lato', sans-serif;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .alert-title, .AlertTitle {
   font-family: 'Lato', sans-serif;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
 }
 
 /* EDGERACK Industrial Control System Styles */
