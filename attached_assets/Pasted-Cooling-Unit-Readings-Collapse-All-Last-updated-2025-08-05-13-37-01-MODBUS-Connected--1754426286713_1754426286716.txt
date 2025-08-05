@@ -1,0 +1,167 @@
+Cooling Unit Readings:
+
+[ Collapse All ]
+Last updated:
+  2025-08-05 13:37:01
+MODBUS: Connected
+States:
+
+[ - ]
+Machine:
+ON
+Self-Check:
+OFF
+Cooling:
+ON
+Heating:
+OFF
+Dehumidifier:
+OFF
+Humidifier:
+OFF
+Alarm Active:
+NO
+Control:
+
+[ - ]
+Machine:
+ON
+
+on
+Control Mode:
+Supply Air
+
+Supply Air
+Supply Air Target (°F):
+66.9
+Modify
+Temperatures / Humidity:
+
+[ - ]
+Return Air
+Temp (°F):
+72
+Return Air
+Humidity:
+28%
+Supply Air
+Temp (°F):
+72.3
+Supply Air
+Humidity:
+-%
+Discharge
+Temp (°F):
+-
+Suction
+Temp (°F):
+70.5
+Evaporator
+Temp (°F):
+70.7
+Condenser
+Temp (°F):
+73.4
+Outdoor
+Temp (°F):
+-
+Fans / Motors:
+
+[ - ]
+Internal Fan (RPM)
+3220
+External Fan (RPM)
+0
+Condenser Motor (RPM)
+1096
+Other Metrics:
+
+[ - ]
+AC Voltage (VAC)
+207.6
+Compressor Heater
+Current (A)
+0
+EEV Position
+300
+High Pressure (Bar)
+0
+Low Pressure (Bar)
+13.3
+Alarm Logs:
+
+[ - ]
+Alarm Entries: 71
+Refresh Log
+Start Timestamp	Description	Duration
+2025-07-21 12:10:41	Door Open Alarm	35 sec
+2025-07-21 12:00:09	Door Open Alarm	25 sec
+2025-07-21 11:37:15	Door Open Alarm	20 min 18 sec
+2025-07-21 11:18:31	Door Open Alarm	56 sec
+2025-07-21 10:57:02	Door Open Alarm	17 min 14 sec
+2025-07-21 10:46:23	Door Open Alarm (closed)	10 min 38 sec
+2025-07-21 10:28:21	Door Open Alarm	16 sec
+2025-07-21 10:21:32	Door Open Alarm (closed)	5 min 23 sec
+2025-07-21 10:01:35	Door Open Alarm (closed)	19 min 56 sec
+2025-07-21 09:42:46	Door Open Alarm (closed)	18 min 48 sec
+2025-07-21 08:12:48	Door Open Alarm	1 min 13 sec
+2025-07-16 15:57:20	Door Open Alarm	11 sec
+2025-07-16 15:56:18	Door Open Alarm	12 sec
+2025-07-16 15:55:23	Door Open Alarm	23 sec
+2025-07-08 09:20:47	Door Open Alarm	27 sec
+2025-07-08 09:01:44	Door Open Alarm	13 sec
+2025-07-08 08:41:55	Door Open Alarm	14 sec
+2025-05-28 09:33:55	Door Open Alarm (closed)	9 min 25 sec
+2025-05-28 09:30:58	Door Open Alarm (closed)	2 min 56 sec
+2025-05-28 09:30:02	Door Open Alarm (closed)	55 sec
+2025-05-28 09:28:57	Door Open Alarm (closed)	1 min 4 sec
+2025-05-28 09:28:22	Door Open Alarm (closed)	34 sec
+2025-05-28 09:24:15	Door Open Alarm	2 min 46 sec
+2025-05-27 14:13:35	Door Open Alarm	24 sec
+2025-05-21 14:48:52	Door Open Alarm	3 min 49 sec
+2025-04-24 10:37:44	Door Open Alarm (closed)	652 hr 11 min 7 sec
+2025-04-24 10:32:33	Door Open Alarm	4 min 14 sec
+2025-04-24 10:18:46	Door Open Alarm	13 min 12 sec
+2025-04-17 20:23:32	Low Return Air Humidity Alarm	60 hr 45 min 4 sec
+2025-04-13 19:24:40	Low Return Air Humidity Alarm	17 hr 45 min 46 sec
+2025-03-26 12:30:25	Door Open Alarm	12 sec
+2025-03-19 15:12:07	Door Open Alarm	39 sec
+2025-03-18 13:12:12	Door Open Alarm	25 hr 55 min 21 sec
+2025-03-17 14:33:50	Door Open Alarm (closed)	1 hr 5 min 16 sec
+2025-03-17 14:23:37	Door Open Alarm	22 sec
+2025-03-17 11:00:48	Door Open Alarm	15 sec
+2025-03-17 10:16:39	Door Open Alarm (closed)	33 min 43 sec
+2025-03-17 10:14:13	Door Open Alarm	11 sec
+2025-03-11 12:59:32	Door Open Alarm (closed)	59 min 55 sec
+2025-02-18 11:57:34	Door Open Alarm	3 min 28 sec
+2025-02-18 10:50:33	Door Open Alarm	36 min 27 sec
+2025-02-18 10:42:56	Door Open Alarm	41 sec
+2025-02-11 12:48:17	Door Open Alarm	24 sec
+2025-02-11 12:14:06	Door Open Alarm (closed)	
+2025-02-11 12:10:43	Door Open Alarm (closed)	3 min 23 sec
+2025-02-11 12:07:03	Door Open Alarm (closed)	3 min 38 sec
+2025-02-11 12:02:19	Door Open Alarm (closed)	4 min 43 sec
+2025-02-11 11:50:40	Door Open Alarm (closed)	11 min 39 sec
+2025-02-11 11:25:10	Door Open Alarm (closed)	48 min 49 sec
+2025-02-11 11:14:00	Door Open Alarm (closed)	36 min 39 sec
+2025-02-10 17:42:57	Door Open Alarm	12 sec
+2025-02-10 17:35:01	Door Open Alarm	3 min 17 sec
+2025-02-10 17:21:03	Door Open Alarm	14 sec
+2025-02-10 17:07:25	Door Open Alarm	5 min 2 sec
+2025-02-10 17:06:14	Inverter Compressor Fault	5 min 2 sec
+2025-02-10 17:01:32	Door Open Alarm	12 sec
+2025-02-07 11:10:49	Inverter Compressor Fault	5 min 1 sec
+2025-02-07 08:56:09	Inverter Compressor Fault	5 min 2 sec
+2025-02-07 07:31:31	Inverter Compressor Fault	1 hr 19 min 51 sec
+2025-02-07 07:22:52	Inverter Compressor Fault	5 min 1 sec
+2025-02-07 07:14:12	Inverter Compressor Fault	5 min 1 sec
+2025-02-06 09:17:49	Inverter Compressor Fault	21 hr 53 min 4 sec
+2025-02-06 09:09:09	Inverter Compressor Fault	5 min 1 sec
+2025-02-06 09:00:28	Inverter Compressor Fault	5 min 2 sec
+2025-02-06 08:55:26	Door Open Alarm	1 min 1 sec
+2025-02-05 12:03:25	Inverter Compressor Fault	20 hr 53 min 45 sec
+2025-02-05 11:31:29	Inverter Compressor Fault (closed)	31 min 56 sec
+2025-02-05 08:48:14	Inverter Compressor Fault (closed)	2 hr 43 min 15 sec
+2025-02-05 08:04:06	Inverter Compressor Fault (closed)	43 min 17 sec
+2025-02-05 07:55:26	Inverter Compressor Fault	5 min 1 sec
+2025-02-05 07:46:48	Inverter Compressor Fault	4 min 59 sec
