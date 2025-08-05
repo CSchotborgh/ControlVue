@@ -353,3 +353,23 @@
   @apply text-2xl text-white font-bold;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
+
+.edgerack-monospace {
+  font-family: 'Courier New', monospace;
+}
+
+/* Configuration page specific styles */
+.config-section {
+  @apply mb-6 bg-slate-800/50 rounded-lg border border-slate-700/50 overflow-hidden;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.7) 100%);
+}
+
+.config-section .cooling-header {
+  @apply px-6 py-4 border-b border-slate-700/50;
+  background: linear-gradient(90deg, rgba(51, 65, 85, 0.8) 0%, rgba(71, 85, 105, 0.6) 100%);
+}
+
+.config-section .cooling-content {
+  @apply p-6;
+  background: rgba(30, 41, 59, 0.4);
+}
