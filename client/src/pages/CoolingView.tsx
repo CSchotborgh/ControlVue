@@ -116,7 +116,6 @@ export default function CoolingView() {
           </button>
         </div>
       </div>
-      
       {/* Status and Last Updated */}
       <div className="mb-6 text-center space-y-2">
         <div className="text-lg">
@@ -126,12 +125,11 @@ export default function CoolingView() {
           MODBUS: <Badge className="status-badge-on">{modbusStatus}</Badge>
         </div>
       </div>
-
       {/* States Section */}
       <div className="cooling-section">
         <div className="cooling-header">
           <div className="flex items-start text-xl font-semibold">States:</div>
-          <div className="flex gap-3 flex-1 justify-end">
+          <div className="flex gap-3 flex-1 justify-end font-normal">
             <button onClick={() => setShowStates(!showStates)}>
               <div className="text-xl">{showStates ? '[ - ]' : '[ + ]'}</div>
             </button>
@@ -207,7 +205,6 @@ export default function CoolingView() {
           </div>
         )}
       </div>
-
       {/* Control Section */}
       <div className="cooling-section">
         <div className="cooling-header">
@@ -250,7 +247,6 @@ export default function CoolingView() {
           </div>
         )}
       </div>
-
       {/* Temperatures / Humidity Section */}
       <div className="cooling-section">
         <div className="cooling-header">
@@ -313,7 +309,6 @@ export default function CoolingView() {
           </div>
         )}
       </div>
-
       {/* Fans / Motors Section */}
       <div className="cooling-section">
         <div className="cooling-header">
@@ -346,7 +341,6 @@ export default function CoolingView() {
           </div>
         )}
       </div>
-
       {/* Other Metrics Section */}
       <div className="cooling-section">
         <div className="cooling-header">
@@ -389,7 +383,6 @@ export default function CoolingView() {
           </div>
         )}
       </div>
-
       {/* Alarm Logs Section */}
       <div className="cooling-section">
         <div className="cooling-header">
