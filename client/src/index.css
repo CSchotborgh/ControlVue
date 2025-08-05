@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* EDGERACK Industrial Theme */
+  --edgerack-dark: hsl(215, 28%, 17%);
+  --edgerack-darker: hsl(215, 25%, 12%);
+  --edgerack-blue: hsl(217, 91%, 60%);
+  --edgerack-green: hsl(142, 76%, 36%);
+  --edgerack-slate: hsl(215, 20%, 65%);
+}
+
+.dark {
+  --background: hsl(215, 28%, 17%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(215, 25%, 12%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --popover: hsl(215, 28%, 17%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(215, 28%, 17%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(215, 25%, 12%);
+  --input: hsl(215, 25%, 12%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(215, 25%, 12%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(215, 25%, 12%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* EDGERACK Industrial Control System Styles */
+.custom-grid {
+  @apply m-auto grid grid-cols-1 gap-2 border rounded-3xl p-4 min-w-full min-h-full bg-slate-800 text-center items-center content-center justify-center text-white shadow-lg;
+  border-color: hsl(215, 25%, 25%);
+  background: linear-gradient(135deg, hsl(215, 28%, 17%) 0%, hsl(215, 25%, 15%) 100%);
+}
+
+.table-value {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: hsl(0, 0%, 98%);
+}
+
+.table-label {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(215, 20%, 75%);
+  letter-spacing: 0.05em;
+}
+
+.status-badge {
+  @apply px-3 py-1 rounded-full text-sm font-medium shadow-sm;
+  transition: all 0.2s ease;
+}
+
+.status-badge.on {
+  background: hsl(142, 76%, 36%);
+  color: hsl(0, 0%, 100%);
+}
+
+.status-badge.off {
+  background: hsl(215, 20%, 40%);
+  color: hsl(0, 0%, 90%);
+}
+
+.status-badge.blue {
+  background: hsl(217, 91%, 60%);
+  color: hsl(0, 0%, 100%);
+}
+
+.status-badge.purple {
+  background: hsl(271, 91%, 65%);
+  color: hsl(0, 0%, 100%);
+}
+
+.navbar-brand {
+  @apply text-xl font-bold text-white;
+  letter-spacing: 0.1em;
+}
+
+.transition-all {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.collapsible-content.expanded {
+  max-height: 2000px;
+}
+
+.toggle-switch {
+  @apply relative inline-flex h-6 w-11 items-center rounded-full transition-colors cursor-pointer;
+  background: hsl(215, 20%, 40%);
+}
+
+.toggle-switch.active {
+  background: hsl(142, 76%, 36%);
+}
+
+.toggle-slider {
+  @apply inline-block h-4 w-4 transform rounded-full bg-white transition-transform shadow-md;
+  margin-left: 4px;
+}
+
+.toggle-slider.active {
+  @apply translate-x-6;
+}
+
+/* Enhanced card styling */
+.edgerack-card {
+  background: linear-gradient(135deg, hsl(215, 28%, 17%) 0%, hsl(215, 25%, 15%) 100%);
+  border: 1px solid hsl(215, 25%, 25%);
+  box-shadow: 0 8px 32px hsl(215, 28%, 5%, 0.3);
+}
+
+/* Status indicator animations */
+.status-indicator {
+  position: relative;
+}
+
+.status-indicator.on::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: hsl(142, 76%, 36%);
+  border-radius: inherit;
+  opacity: 0.3;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Enhanced table styling */
+.edgerack-table {
+  background: hsl(215, 28%, 17%);
+  border: 1px solid hsl(215, 25%, 25%);
+}
+
+.edgerack-table th {
+  background: hsl(215, 25%, 12%);
+  color: hsl(215, 20%, 75%);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.edgerack-table td {
+  color: hsl(0, 0%, 90%);
+  border-color: hsl(215, 25%, 25%);
+}
+
+.edgerack-table tr:hover {
+  background: hsl(215, 25%, 20%);
+}
+
+/* Loading skeleton */
+.skeleton {
+  background: linear-gradient(90deg, hsl(215, 25%, 20%) 25%, hsl(215, 25%, 25%) 50%, hsl(215, 25%, 20%) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
