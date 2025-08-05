@@ -128,7 +128,7 @@ export default function CoolingView() {
       {/* States Section */}
       <div className="cooling-section">
         <div className="cooling-header">
-          <div className="flex items-start text-xl font-semibold">States:</div>
+          <div className="flex items-start text-xl font-light">States:</div>
           <div className="flex gap-3 flex-1 justify-end font-normal">
             <button onClick={() => setShowStates(!showStates)}>
               <div className="text-xl">{showStates ? '[ - ]' : '[ + ]'}</div>
