@@ -65,12 +65,11 @@ export default function ConfigView() {
 
   return (
     <main className="container mx-auto px-4 py-8 text-white">
-      <div className="bg-slate-800/60 rounded-xl p-6 border border-slate-700/50 backdrop-blur-sm">
-        <h1 className="text-2xl font-semibold mb-6 text-white">Configuration:</h1>
+      <h1 className="text-2xl font-semibold mb-8">Configuration:</h1>
 
-        {/* General Settings Section */}
-        <div className="config-section mb-4">
-          <div className="cooling-header">
+      {/* General Settings Section */}
+      <div className="cooling-section">
+        <div className="cooling-header">
           <div className="flex items-start text-xl font-semibold">General Settings</div>
           <div className="flex gap-3 flex-1 justify-end">
             <button onClick={() => setShowGeneralSettings(!showGeneralSettings)}>
@@ -142,8 +141,8 @@ export default function ConfigView() {
         )}
       </div>
 
-        {/* Network Settings Section */}
-        <div className="config-section">
+      {/* Network Settings Section */}
+      <div className="cooling-section">
         <div className="cooling-header">
           <div className="flex items-start text-xl font-semibold">Network Settings</div>
           <div className="flex gap-3 flex-1 justify-end">
@@ -332,8 +331,8 @@ export default function ConfigView() {
         )}
       </div>
 
-        {/* Administration Controls Section */}
-        <div className="config-section">
+      {/* Administration Controls Section */}
+      <div className="cooling-section">
         <div className="cooling-header">
           <div className="flex items-start text-xl font-semibold">Administration Controls</div>
           <div className="flex gap-3 flex-1 justify-end">
@@ -365,7 +364,6 @@ export default function ConfigView() {
             </div>
           </div>
         )}
-        </div>
       </div>
     </main>
   );
