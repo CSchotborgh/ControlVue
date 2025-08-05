@@ -110,9 +110,14 @@ export default function HomeView() {
     <main className="container mx-auto px-4 py-8 text-white">
       {/* System Error Alert */}
       {systemError && (
-        <div className="mb-6 p-4 bg-red-900 border border-red-600 rounded-lg">
+        <div className="mb-6 p-4 bg-red-900/80 border border-red-600/50 rounded-lg" style={{
+          background: 'linear-gradient(135deg, rgba(127, 29, 29, 0.8) 0%, rgba(153, 27, 27, 0.6) 100%)',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
+        }}>
           <div className="flex items-center">
-            <div className="text-red-200 font-semibold">{systemError}</div>
+            <div className="text-red-200 font-semibold text-lg" style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}>
+              {systemError}
+            </div>
           </div>
         </div>
       )}
@@ -463,51 +468,51 @@ export default function HomeView() {
           
           {showNetworking && (
             <div className="transition-all duration-500 ease-in-out">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
+              <div className="system-info-grid">
                 {/* Primary Network */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-4 mb-4">
                     <div className="text-lg font-semibold">Primary Link Status:</div>
                     <Badge className={networkInfo.primaryLinkStatus === 'up' ? 'status-badge-on' : 'status-badge-off'}>
                       {networkInfo.primaryLinkStatus}
                     </Badge>
                   </div>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Primary IPv4 Address:</span>
-                      <span className="text-white font-medium">{networkInfo.primaryIPv4}</span>
+                  <div className="space-y-3">
+                    <div className="network-status-item">
+                      <span className="network-status-label">Primary IPv4 Address:</span>
+                      <span className="network-status-value">{networkInfo.primaryIPv4}</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Primary Gateway:</span>
-                      <span className="text-white font-medium">{networkInfo.primaryGateway}</span>
+                    <div className="network-status-item">
+                      <span className="network-status-label">Primary Gateway:</span>
+                      <span className="network-status-value">{networkInfo.primaryGateway}</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Primary Netmask:</span>
-                      <span className="text-white font-medium">{networkInfo.primaryNetmask}</span>
+                    <div className="network-status-item">
+                      <span className="network-status-label">Primary Netmask:</span>
+                      <span className="network-status-value">{networkInfo.primaryNetmask}</span>
                     </div>
                   </div>
                 </div>
                 
                 {/* Secondary Network */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-4 mb-4">
                     <div className="text-lg font-semibold">Secondary Link Status:</div>
                     <Badge className={networkInfo.secondaryLinkStatus === 'up' ? 'status-badge-on' : 'status-badge-off'}>
                       {networkInfo.secondaryLinkStatus}
                     </Badge>
                   </div>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Secondary IPv4 Address:</span>
-                      <span className="text-white font-medium">{networkInfo.secondaryIPv4}</span>
+                  <div className="space-y-3">
+                    <div className="network-status-item">
+                      <span className="network-status-label">Secondary IPv4 Address:</span>
+                      <span className="network-status-value">{networkInfo.secondaryIPv4}</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Secondary Gateway:</span>
-                      <span className="text-white font-medium">{networkInfo.secondaryGateway}</span>
+                    <div className="network-status-item">
+                      <span className="network-status-label">Secondary Gateway:</span>
+                      <span className="network-status-value">{networkInfo.secondaryGateway}</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Secondary Netmask:</span>
-                      <span className="text-white font-medium">{networkInfo.secondaryNetmask}</span>
+                    <div className="network-status-item">
+                      <span className="network-status-label">Secondary Netmask:</span>
+                      <span className="network-status-value">{networkInfo.secondaryNetmask}</span>
                     </div>
                   </div>
                 </div>
@@ -521,9 +526,9 @@ export default function HomeView() {
                     {networkInfo.ntpSynchronized ? 'Yes' : 'No'}
                   </Badge>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-300">NTP Synchronized Server:</span>
-                  <span className="text-white font-medium">{networkInfo.ntpServer}</span>
+                <div className="network-status-item">
+                  <span className="network-status-label">NTP Synchronized Server:</span>
+                  <span className="network-status-value">{networkInfo.ntpServer}</span>
                 </div>
               </div>
             </div>
@@ -547,56 +552,54 @@ export default function HomeView() {
           
           {showSystem && (
             <div className="transition-all duration-500 ease-in-out">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
+              <div className="system-info-grid">
                 {/* System Performance */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-4 mb-4">
                     <div className="text-lg font-semibold">CPU Usage:</div>
                     <Badge className={systemInfo.cpuUsage > 80 ? 'status-badge-off' : systemInfo.cpuUsage > 60 ? 'status-badge-yellow' : 'status-badge-on'}>
                       {systemInfo.cpuUsage}%
                     </Badge>
                   </div>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Load Averages:</span>
-                      <span className="text-white font-medium">{systemInfo.loadAverages}</span>
+                  <div className="space-y-3">
+                    <div className="network-status-item">
+                      <span className="network-status-label">Load Averages:</span>
+                      <span className="network-status-value">{systemInfo.loadAverages}</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Memory Usage:</span>
-                      <span className="text-white font-medium">{systemInfo.memoryUsage}</span>
+                    <div className="network-status-item">
+                      <span className="network-status-label">Memory Usage:</span>
+                      <span className="network-status-value">{systemInfo.memoryUsage}</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Storage Usage:</span>
-                      <span className="text-white font-medium">{systemInfo.storageUsage}</span>
+                    <div className="network-status-item">
+                      <span className="network-status-label">Storage Usage:</span>
+                      <span className="network-status-value">{systemInfo.storageUsage}</span>
                     </div>
                   </div>
                 </div>
                 
                 {/* Flash Wear & System Info */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-4 mb-4">
                     <div className="text-lg font-semibold">Flash Wear Level:</div>
                     <Badge className={systemInfo.flashWearLevel <= 10 ? 'status-badge-on' : systemInfo.flashWearLevel <= 50 ? 'status-badge-yellow' : 'status-badge-off'}>
                       {systemInfo.flashWearLevel}
                     </Badge>
                   </div>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Wear Level Description:</span>
-                      <span className="text-white font-medium">New (&lt;=10%)</span>
+                  <div className="space-y-3">
+                    <div className="network-status-item">
+                      <span className="network-status-label">Wear Level Description:</span>
+                      <span className="network-status-value">New (&lt;=10%)</span>
                     </div>
                   </div>
                 </div>
               </div>
               
               {/* System Details */}
-              <div className="mt-6 pt-6 border-t border-slate-600 space-y-4">
-                <div className="text-center">
-                  <div className="text-lg font-semibold text-green-400">
-                    [ System Uptime: {systemInfo.uptime} ]
-                  </div>
+              <div className="system-uptime-display">
+                <div className="system-uptime-text">
+                  [ System Uptime: {systemInfo.uptime} ]
                 </div>
-                <div className="text-center text-gray-300">
+                <div className="system-version-text">
                   [ Version: {systemInfo.version} - Build: {systemInfo.build} - Release: {systemInfo.release} ]
                 </div>
               </div>
