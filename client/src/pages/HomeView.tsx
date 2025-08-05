@@ -129,7 +129,7 @@ export default function HomeView() {
             <div className="flex gap-3 flex-1 justify-end">
               <button onClick={() => setShowCabinetSignals(!showCabinetSignals)}>
                 <div className="text-2xl">
-                  {showCabinetSignals ? '[ ^ ]' : '[ v ]'}
+                  {showCabinetSignals ? '[ - ]' : '[ + ]'}
                 </div>
               </button>
             </div>
