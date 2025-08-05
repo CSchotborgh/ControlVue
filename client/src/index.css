@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;600;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -61,8 +63,97 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply antialiased bg-background text-foreground;
+    font-family: 'Lato', sans-serif;
+    font-weight: 200; /* Ultra thin for body text */
   }
+}
+
+/* Lato Font Weight Rules */
+/* Ultra thin for body text and general content */
+body, p, span, div, td, li, .text-gray-300, .text-gray-400, .text-white {
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+}
+
+/* Normal weight for titles and headers */
+h1, h2, h3, h4, h5, h6, .font-semibold, .font-bold {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600 !important;
+}
+
+/* Specific weight overrides for different elements */
+.navbar-brand, .text-xl, .text-2xl {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600 !important;
+}
+
+/* Ultra thin for labels and secondary text */
+.text-sm, .text-xs, label, .label {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+}
+
+/* Medium weight for buttons and interactive elements */
+button, .btn, .button {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400 !important;
+}
+
+/* Keep monospace fonts for technical data */
+.edgerack-monospace, .font-mono, code, pre {
+  font-family: 'Courier New', monospace !important;
+  font-weight: 400;
+}
+
+/* Status badges with medium weight */
+.status-badge, .status-badge-on, .status-badge-off, .status-badge-blue, .status-badge-purple, .status-badge-yellow {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400 !important;
+}
+
+/* Table headers with normal weight */
+th, .table-label {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400 !important;
+}
+
+/* Card titles and content */
+.card-title, .CardTitle {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600 !important;
+}
+
+.card-description, .CardDescription {
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+}
+
+/* Navigation elements */
+nav a, .nav-link {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+nav a:hover, .nav-link:hover, .router-link-active {
+  font-weight: 400 !important;
+}
+
+/* Form elements */
+input, textarea, select {
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+}
+
+/* Alert and notification text */
+.alert, .Alert {
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+}
+
+.alert-title, .AlertTitle {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500 !important;
 }
 
 /* EDGERACK Industrial Control System Styles */
