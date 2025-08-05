@@ -131,7 +131,7 @@ export default function CoolingView() {
           <div className="flex items-start text-xl font-light">States:</div>
           <div className="flex gap-3 flex-1 justify-end font-normal">
             <button onClick={() => setShowStates(!showStates)}>
-              <div className="text-xl">{showStates ? '[ - ]' : '[ + ]'}</div>
+              <div className="text-xl">{showStates ? '[ ^ ]' : '[ v ]'}</div>
             </button>
           </div>
         </div>
@@ -211,7 +211,7 @@ export default function CoolingView() {
           <div className="flex items-start text-xl font-semibold">Control:</div>
           <div className="flex gap-3 flex-1 justify-end">
             <button onClick={() => setShowControl(!showControl)}>
-              <div className="text-xl">{showControl ? '[ - ]' : '[ + ]'}</div>
+              <div className="text-xl">{showControl ? '[ ^ ]' : '[ v ]'}</div>
             </button>
           </div>
         </div>
@@ -253,7 +253,7 @@ export default function CoolingView() {
           <div className="flex items-start text-xl font-semibold">Temperatures / Humidity:</div>
           <div className="flex gap-3 flex-1 justify-end">
             <button onClick={() => setShowTempsHumidity(!showTempsHumidity)}>
-              <div className="text-xl">{showTempsHumidity ? '[ - ]' : '[ + ]'}</div>
+              <div className="text-xl">{showTempsHumidity ? '[ ^ ]' : '[ v ]'}</div>
             </button>
           </div>
         </div>
@@ -315,7 +315,7 @@ export default function CoolingView() {
           <div className="flex items-start text-xl font-semibold">Fans / Motors:</div>
           <div className="flex gap-3 flex-1 justify-end">
             <button onClick={() => setShowFansMotors(!showFansMotors)}>
-              <div className="text-xl">{showFansMotors ? '[ - ]' : '[ + ]'}</div>
+              <div className="text-xl">{showFansMotors ? '[ ^ ]' : '[ v ]'}</div>
             </button>
           </div>
         </div>
@@ -347,7 +347,7 @@ export default function CoolingView() {
           <div className="flex items-start text-xl font-semibold">Other Metrics:</div>
           <div className="flex gap-3 flex-1 justify-end">
             <button onClick={() => setShowOtherMetrics(!showOtherMetrics)}>
-              <div className="text-xl">{showOtherMetrics ? '[ - ]' : '[ + ]'}</div>
+              <div className="text-xl">{showOtherMetrics ? '[ ^ ]' : '[ v ]'}</div>
             </button>
           </div>
         </div>
@@ -389,7 +389,7 @@ export default function CoolingView() {
           <div className="flex items-start text-xl font-semibold">Alarm Logs:</div>
           <div className="flex gap-3 flex-1 justify-end">
             <button onClick={() => setShowAlarmLogs(!showAlarmLogs)}>
-              <div className="text-xl">{showAlarmLogs ? '[ - ]' : '[ + ]'}</div>
+              <div className="text-xl">{showAlarmLogs ? '[ ^ ]' : '[ v ]'}</div>
             </button>
           </div>
         </div>
