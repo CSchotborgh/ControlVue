@@ -24,50 +24,55 @@ export default function SiteNavigation() {
               </div>
               <div className="hidden md:block ml-10">
                 <div className="flex items-baseline space-x-4">
-                  <Link href="/">
-                    <a className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  <Link 
+                    href="/"
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                       isActive('/') 
                         ? 'text-white bg-gray-700 font-bold' 
                         : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-                    }`}>
-                      Home
-                    </a>
+                    }`}
+                  >
+                    Home
                   </Link>
-                  <Link href="/cooling">
-                    <a className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  <Link 
+                    href="/cooling"
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                       isActive('/cooling') 
                         ? 'text-white bg-gray-700 font-bold' 
                         : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-                    }`}>
-                      Cooling Unit
-                    </a>
+                    }`}
+                  >
+                    Cooling Unit
                   </Link>
-                  <Link href="/user">
-                    <a className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  <Link 
+                    href="/user"
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                       isActive('/user') 
                         ? 'text-white bg-gray-700 font-bold' 
                         : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-                    }`}>
-                      Admin
-                    </a>
+                    }`}
+                  >
+                    Admin
                   </Link>
-                  <Link href="/config">
-                    <a className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  <Link 
+                    href="/config"
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                       isActive('/config') 
                         ? 'text-white bg-gray-700 font-bold' 
                         : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-                    }`}>
-                      Config
-                    </a>
+                    }`}
+                  >
+                    Config
                   </Link>
-                  <Link href="/upgrade">
-                    <a className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  <Link 
+                    href="/upgrade"
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                       isActive('/upgrade') 
                         ? 'text-white bg-gray-700 font-bold' 
                         : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-                    }`}>
-                      Upgrade
-                    </a>
+                    }`}
+                  >
+                    Upgrade
                   </Link>
                 </div>
               </div>
@@ -87,32 +92,55 @@ export default function SiteNavigation() {
         {/* Mobile menu */}
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link href="/">
-              <a className={`block px-3 py-2 rounded-md text-base font-medium ${
+            <Link 
+              href="/"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
                 isActive('/') 
                   ? 'text-white bg-gray-700 font-bold' 
                   : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-              }`}>
-                Home
-              </a>
+              }`}
+            >
+              Home
             </Link>
-            <Link href="/rcu">
-              <a className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive('/rcu') 
+            <Link 
+              href="/cooling"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive('/cooling') 
                   ? 'text-white bg-gray-700 font-bold' 
                   : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-              }`}>
-                RCU View
-              </a>
+              }`}
+            >
+              Cooling Unit
             </Link>
-            <Link href="/network">
-              <a className={`block px-3 py-2 rounded-md text-base font-medium ${
-                isActive('/network') 
+            <Link 
+              href="/user"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive('/user') 
                   ? 'text-white bg-gray-700 font-bold' 
                   : 'text-gray-300 hover:bg-gray-700 hover:text-white'
-              }`}>
-                Network
-              </a>
+              }`}
+            >
+              Admin
+            </Link>
+            <Link 
+              href="/config"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive('/config') 
+                  ? 'text-white bg-gray-700 font-bold' 
+                  : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+              }`}
+            >
+              Config
+            </Link>
+            <Link 
+              href="/upgrade"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive('/upgrade') 
+                  ? 'text-white bg-gray-700 font-bold' 
+                  : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+              }`}
+            >
+              Upgrade
             </Link>
           </div>
         </div>

@@ -1,0 +1,41 @@
+[vite] connecting...
+[vite] connected.
+Warning: validateDOMNesting(...): <a> cannot appear as a descendant of &lt;a&gt;.
+    at a
+    at a
+    at https://059bb843-2b49-48a0-85ea-6b3227a6e8ec-00-k6x08w82ddr.janeway.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=3e9b0b32:337:18
+    at div
+    at div
+    at div
+    at div
+    at div
+    at nav
+    at SiteNavigation (https://059bb843-2b49-48a0-85ea-6b3227a6e8ec-00-k6x08w82ddr.janeway.replit.dev/src/components/SiteNavigation.tsx:24:22)
+    at div
+    at Router
+    at AuthProvider (https://059bb843-2b49-48a0-85ea-6b3227a6e8ec-00-k6x08w82ddr.janeway.replit.dev/src/hooks/use-auth.tsx:20:32)
+    at Provider (https://059bb843-2b49-48a0-85ea-6b3227a6e8ec-00-k6x08w82ddr.janeway.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-PLT6GTVM.js?v=3e9b0b32:38:15)
+    at TooltipProvider (https://059bb843-2b49-48a0-85ea-6b3227a6e8ec-00-k6x08w82ddr.janeway.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=3e9b0b32:61:5)
+    at QueryClientProvider (https://059bb843-2b49-48a0-85ea-6b3227a6e8ec-00-k6x08w82ddr.janeway.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=3e9b0b32:2805:3)
+    at App
+at a
+at a
+at https://059bb843-2b49-48a0-85ea-6b3227a6e8ec-00-k6x08w82ddr.janeway.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=3e9b0b32:337:18
+at div
+at div
+at div
+at div
+at div
+at nav
+at SiteNavigation (https://059bb843-2b49-48a0-85ea-6b3227a6e8ec-00-k6x08w82ddr.janeway.replit.dev/src/components/SiteNavigation.tsx:24:22)
+at div
+at Router
+at AuthProvider (https://059bb843-2b49-48a0-85ea-6b3227a6e8ec-00-k6x08w82ddr.janeway.replit.dev/src/hooks/use-auth.tsx:20:32)
+at Provider (https://059bb843-2b49-48a0-85ea-6b3227a6e8ec-00-k6x08w82ddr.janeway.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-PLT6GTVM.js?v=3e9b0b32:38:15)
+at TooltipProvider (https://059bb843-2b49-48a0-85ea-6b3227a6e8ec-00-k6x08w82ddr.janeway.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=3e9b0b32:61:5)
+at QueryClientProvider (https://059bb843-2b49-48a0-85ea-6b3227a6e8ec-00-k6x08w82ddr.janeway.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=3e9b0b32:2805:3)
+at App
+at t.value (https://059bb843-2b49-48a0-85ea-6b3227a6e8ec-00-k6x08w82ddr.janeway.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:17465)
+at new t (https://059bb843-2b49-48a0-85ea-6b3227a6e8ec-00-k6x08w82ddr.janeway.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:12630)
+at t.value (https://059bb843-2b49-48a0-85ea-6b3227a6e8ec-00-k6x08w82ddr.janeway.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:32766)
+at https://059bb843-2b49-48a0-85ea-6b3227a6e8ec-00-k6x08w82ddr.janeway.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:34400
