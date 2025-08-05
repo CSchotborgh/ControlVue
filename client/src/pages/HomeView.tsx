@@ -28,11 +28,22 @@ interface CoolingUnitData {
 
 export default function HomeView() {
   const [showInternalGrid, setShowInternalGrid] = useState(false);
+  const [showCabinetSignals, setShowCabinetSignals] = useState(false);
+  const [showEventLog, setShowEventLog] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [machineActive, setMachineActive] = useState(true);
   const [controllingSupplyAir, setControllingSupplyAir] = useState(true);
   const [returnAirTarget, setReturnAirTarget] = useState('80.6');
   const [supplyAirTarget, setSupplyAirTarget] = useState('66.2');
+  
+  // System status and alerts
+  const [systemError] = useState('Cooling Unit Error: Check connection cable');
+  const [cabinetStatus] = useState({
+    alarmActivated: false,
+    doorSensor: 'CLOSED',
+    waterSensor: 'OK',
+    smokeSensor: 'OK'
+  });
 
   const { data: coolingData, isLoading } = useQuery<CoolingUnitData>({
     queryKey: ['/api/cooling-unit/data'],
@@ -69,6 +80,88 @@ export default function HomeView() {
 
   return (
     <main className="container mx-auto px-4 py-8 text-white">
+      {/* System Error Alert */}
+      {systemError && (
+        <div className="mb-6 p-4 bg-red-900 border border-red-600 rounded-lg">
+          <div className="flex items-center">
+            <div className="text-red-200 font-semibold">{systemError}</div>
+          </div>
+        </div>
+      )}
+
+      {/* Cabinet Signals Section */}
+      <div className="max-h-fit my-6 grid grid-rows-1 border rounded-3xl bg-slate-800">
+        <div className="my-6 mx-2">
+          <div className="container flex flex-row">
+            <div className="flex items-start text-2xl">Cabinet</div>
+            <div className="flex gap-3 flex-1 justify-end">
+              <button onClick={() => setShowCabinetSignals(!showCabinetSignals)}>
+                <div className="text-2xl">
+                  {showCabinetSignals ? '[ - ]' : '[ + ]'}
+                </div>
+              </button>
+            </div>
+          </div>
+          
+          {showCabinetSignals && (
+            <div className="transition-all duration-500 ease-in-out">
+              <div className="inline-flex items-center justify-center w-full">
+                <hr className="w-11/12 h-px mt-6 bg-gray-200 border-0 dark:bg-gray-300" />
+                <span className="absolute mt-6 px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:text-white dark:bg-gray-800 uppercase">
+                  Signals from Cooling Unit
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 m-2 sm:grid-cols-4 mx-auto gap-8 text-white w-full justify-around mt-8">
+                <div className="custom-grid border-none">
+                  <div className="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">
+                    Alarm Activated:
+                  </div>
+                  <div className="flex justify-center">
+                    <Badge className={cabinetStatus.alarmActivated ? 'status-badge-off' : 'status-badge-on'}>
+                      {cabinetStatus.alarmActivated ? 'YES' : 'No'}
+                    </Badge>
+                  </div>
+                </div>
+                
+                <div className="custom-grid border-none">
+                  <div className="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">
+                    Door Sensor:
+                  </div>
+                  <div className="flex justify-center">
+                    <Badge className={cabinetStatus.doorSensor === 'CLOSED' ? 'status-badge-on' : 'status-badge-off'}>
+                      {cabinetStatus.doorSensor}
+                    </Badge>
+                  </div>
+                </div>
+                
+                <div className="custom-grid border-none">
+                  <div className="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">
+                    Water Sensor:
+                  </div>
+                  <div className="flex justify-center">
+                    <Badge className={cabinetStatus.waterSensor === 'OK' ? 'status-badge-on' : 'status-badge-off'}>
+                      {cabinetStatus.waterSensor}
+                    </Badge>
+                  </div>
+                </div>
+                
+                <div className="custom-grid border-none">
+                  <div className="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">
+                    Smoke Sensor:
+                  </div>
+                  <div className="flex justify-center">
+                    <Badge className={cabinetStatus.smokeSensor === 'OK' ? 'status-badge-on' : 'status-badge-off'}>
+                      {cabinetStatus.smokeSensor}
+                    </Badge>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Top level container for Cooling Unit section */}
       <div className="max-h-fit my-6 grid grid-rows-1 border rounded-3xl bg-slate-800">
         <div className="my-6 mx-2">
@@ -217,6 +310,109 @@ export default function HomeView() {
                   </div>
                   <div className="text-4xl">{condenserMotorReal}</div>
                 </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Events Log Section */}
+      <div className="max-h-fit my-6 grid grid-rows-1 border rounded-3xl bg-slate-800">
+        <div className="my-6 mx-2">
+          <div className="container flex flex-row">
+            <div className="flex items-start text-2xl">Events Log</div>
+            <div className="flex gap-3 flex-1 justify-end">
+              <button onClick={() => setShowEventLog(!showEventLog)}>
+                <div className="text-2xl">
+                  {showEventLog ? '[ - ]' : '[ + ]'}
+                </div>
+              </button>
+            </div>
+          </div>
+          
+          {showEventLog && (
+            <div className="transition-all duration-500 ease-in-out">
+              <div className="flex justify-between items-center mt-4 mb-4">
+                <div className="text-sm text-gray-400">Log Entries: 1429</div>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="border-gray-600 text-white hover:bg-gray-700"
+                >
+                  Refresh Log
+                </Button>
+              </div>
+              
+              <div className="relative overflow-x-auto">
+                <table className="edgerack-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Timestamp</th>
+                      <th scope="col">Reporter</th>
+                      <th scope="col">Target</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Event</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="font-medium">2025-08-05 12:20:53</td>
+                      <td>Display</td>
+                      <td>Display</td>
+                      <td><Badge className="status-badge-blue">State</Badge></td>
+                      <td>Screen Awakened from SCREENSAVER by MOTION!</td>
+                    </tr>
+                    <tr>
+                      <td className="font-medium">2025-08-05 09:42:48</td>
+                      <td>Website</td>
+                      <td>RCU</td>
+                      <td><Badge className="status-badge-yellow">Config</Badge></td>
+                      <td>Modified ( control-mode-setting )</td>
+                    </tr>
+                    <tr>
+                      <td className="font-medium">2025-08-05 09:40:02</td>
+                      <td>Website</td>
+                      <td>Controller</td>
+                      <td><Badge className="status-badge-on">Auth</Badge></td>
+                      <td>User admin log in SUCCESSFUL!</td>
+                    </tr>
+                    <tr>
+                      <td className="font-medium">2025-08-01 13:10:38</td>
+                      <td>RCU</td>
+                      <td>RCU</td>
+                      <td><Badge className="status-badge-on">State</Badge></td>
+                      <td>MODBUS has CONNECTED</td>
+                    </tr>
+                    <tr>
+                      <td className="font-medium">2025-08-01 13:10:38</td>
+                      <td>RCU</td>
+                      <td>RCU</td>
+                      <td><Badge className="status-badge-on">State</Badge></td>
+                      <td>Machine status set to ON</td>
+                    </tr>
+                    <tr>
+                      <td className="font-medium">2025-07-21 15:44:42</td>
+                      <td>Website</td>
+                      <td>Controller</td>
+                      <td><Badge className="status-badge-off">Auth</Badge></td>
+                      <td>User admin log in FAILED! (Invalid user/pass)</td>
+                    </tr>
+                    <tr>
+                      <td className="font-medium">2025-07-21 12:10:41</td>
+                      <td>RCU</td>
+                      <td>Cabinet</td>
+                      <td><Badge className="status-badge-off">Alarm</Badge></td>
+                      <td>Door Open Alarm</td>
+                    </tr>
+                    <tr>
+                      <td className="font-medium">2025-07-21 11:14:53</td>
+                      <td>Display</td>
+                      <td>RCU</td>
+                      <td><Badge className="status-badge-blue">State</Badge></td>
+                      <td>Request to modify Supply Air Target</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           )}
