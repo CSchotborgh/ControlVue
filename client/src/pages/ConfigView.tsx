@@ -73,7 +73,7 @@ export default function ConfigView() {
           <div className="flex items-start text-xl font-semibold">General Settings</div>
           <div className="flex gap-3 flex-1 justify-end">
             <button onClick={() => setShowGeneralSettings(!showGeneralSettings)}>
-              <div className="text-xl">{showGeneralSettings ? '[ - ]' : '[ + ]'}</div>
+              <div className="text-xl">{showGeneralSettings ? '[ ^ ]' : '[ v ]'}</div>
             </button>
           </div>
         </div>
@@ -147,7 +147,7 @@ export default function ConfigView() {
           <div className="flex items-start text-xl font-semibold">Network Settings</div>
           <div className="flex gap-3 flex-1 justify-end">
             <button onClick={() => setShowNetworkSettings(!showNetworkSettings)}>
-              <div className="text-xl">{showNetworkSettings ? '[ - ]' : '[ + ]'}</div>
+              <div className="text-xl">{showNetworkSettings ? '[ ^ ]' : '[ v ]'}</div>
             </button>
           </div>
         </div>
@@ -337,7 +337,7 @@ export default function ConfigView() {
           <div className="flex items-start text-xl font-semibold">Administration Controls</div>
           <div className="flex gap-3 flex-1 justify-end">
             <button onClick={() => setShowAdminControls(!showAdminControls)}>
-              <div className="text-xl">{showAdminControls ? '[ - ]' : '[ + ]'}</div>
+              <div className="text-xl">{showAdminControls ? '[ ^ ]' : '[ v ]'}</div>
             </button>
           </div>
         </div>
