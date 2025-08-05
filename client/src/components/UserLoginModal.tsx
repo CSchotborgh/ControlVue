@@ -6,6 +6,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
@@ -16,7 +17,7 @@ interface UserLoginModalProps {
 
 export default function UserLoginModal({ onClose }: UserLoginModalProps) {
   const [formData, setFormData] = useState({
-    email: '',
+    username: '',
     password: '',
     remember: false
   });
@@ -44,20 +45,23 @@ export default function UserLoginModal({ onClose }: UserLoginModalProps) {
           <DialogTitle className="text-xl font-semibold text-gray-900 border-b pb-4">
             EdgeRack™ Access - Sign In
           </DialogTitle>
+          <DialogDescription className="text-sm text-gray-600">
+            Enter your user name and password to access the control dashboard
+          </DialogDescription>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-sm font-medium text-gray-900">
+            <Label htmlFor="username" className="text-sm font-medium text-gray-900">
               Your user name
             </Label>
             <Input
-              type="email"
-              name="email"
-              id="email"
-              value={formData.email}
+              type="text"
+              name="username"
+              id="username"
+              value={formData.username}
               onChange={handleInputChange}
-              placeholder="user name or name@company.com"
+              placeholder="user name"
               required
               className="bg-gray-50 border border-gray-300 text-gray-900"
             />
