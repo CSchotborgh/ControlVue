@@ -72,6 +72,60 @@
   background: linear-gradient(135deg, hsl(215, 28%, 17%) 0%, hsl(215, 25%, 15%) 100%);
 }
 
+
+
+.table-label {
+  @apply uppercase text-sm font-medium text-gray-300 tracking-wider;
+}
+
+/* Status badge styles for industrial look */
+.status-badge-on {
+  @apply bg-green-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
+}
+
+.status-badge-off {
+  @apply bg-gray-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
+}
+
+.status-badge-blue {
+  @apply bg-blue-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
+}
+
+.status-badge-purple {
+  @apply bg-purple-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
+}
+
+/* Enhanced table styling for network view */
+.edgerack-table {
+  @apply w-full text-sm text-left text-gray-400;
+}
+
+.edgerack-table thead {
+  @apply text-xs uppercase bg-gray-700 text-gray-400;
+}
+
+.edgerack-table tbody tr {
+  @apply odd:bg-gray-900 even:bg-gray-800 border-b border-gray-700;
+}
+
+.edgerack-table th {
+  @apply px-6 py-3 font-medium text-gray-400 uppercase;
+}
+
+.edgerack-table td {
+  @apply px-6 py-4 text-white;
+}
+
+/* Navigation active link styling */
+.router-link-active {
+  @apply font-bold text-blue-400 bg-gray-700;
+}
+
+.router-link-active::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-blue-400;
+}
+
 .table-value {
   font-size: 1.5rem;
   line-height: 2rem;
