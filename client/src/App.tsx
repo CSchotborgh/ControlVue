@@ -6,8 +6,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/hooks/use-auth";
 import SiteNavigation from "@/components/SiteNavigation";
 import HomeView from "@/pages/HomeView";
-import RCUView from "@/pages/RCUView";
-import NetworkView from "@/pages/NetworkView";
+import AdminView from "@/pages/AdminView";
+import CoolingView from "@/pages/CoolingView";
+import ConfigView from "@/pages/ConfigView";
+import UpgradeView from "@/pages/UpgradeView";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -16,8 +18,10 @@ function Router() {
       <SiteNavigation />
       <Switch>
         <Route path="/" component={HomeView} />
-        <Route path="/rcu" component={RCUView} />
-        <Route path="/network" component={NetworkView} />
+        <Route path="/user" component={AdminView} />
+        <Route path="/cooling" component={CoolingView} />
+        <Route path="/config" component={ConfigView} />
+        <Route path="/upgrade" component={UpgradeView} />
         <Route component={NotFound} />
       </Switch>
     </div>

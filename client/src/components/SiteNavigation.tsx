@@ -33,22 +33,40 @@ export default function SiteNavigation() {
                       Home
                     </a>
                   </Link>
-                  <Link href="/rcu">
+                  <Link href="/cooling">
                     <a className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                      isActive('/rcu') 
+                      isActive('/cooling') 
                         ? 'text-white bg-gray-700 font-bold' 
                         : 'text-gray-300 hover:bg-gray-700 hover:text-white'
                     }`}>
-                      RCU View
+                      Cooling Unit
                     </a>
                   </Link>
-                  <Link href="/network">
+                  <Link href="/user">
                     <a className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                      isActive('/network') 
+                      isActive('/user') 
                         ? 'text-white bg-gray-700 font-bold' 
                         : 'text-gray-300 hover:bg-gray-700 hover:text-white'
                     }`}>
-                      Network
+                      Admin
+                    </a>
+                  </Link>
+                  <Link href="/config">
+                    <a className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                      isActive('/config') 
+                        ? 'text-white bg-gray-700 font-bold' 
+                        : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                    }`}>
+                      Config
+                    </a>
+                  </Link>
+                  <Link href="/upgrade">
+                    <a className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                      isActive('/upgrade') 
+                        ? 'text-white bg-gray-700 font-bold' 
+                        : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                    }`}>
+                      Upgrade
                     </a>
                   </Link>
                 </div>
