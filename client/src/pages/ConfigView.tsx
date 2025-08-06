@@ -1,3 +1,12 @@
+/**
+ * EDGERACK Cooling Unit Control System - Configuration View
+ * 
+ * System configuration interface providing access to general settings, network
+ * configuration, and administrative controls. This page allows authorized users
+ * to modify system parameters, network settings, and operational parameters
+ * for the cooling unit monitoring system.
+ */
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -6,12 +15,22 @@ import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Switch } from '@/components/ui/switch';
 
+/**
+ * Configuration View Component
+ * 
+ * Renders the system configuration page with expandable sections for different
+ * configuration categories. Displays real EDGERACK system settings and provides
+ * interfaces for modifying system parameters and network configurations.
+ * 
+ * @returns JSX element for the configuration management interface
+ */
 export default function ConfigView() {
+  // State management for expandable configuration sections
   const [showGeneralSettings, setShowGeneralSettings] = useState(false);
   const [showNetworkSettings, setShowNetworkSettings] = useState(false);
   const [showAdminControls, setShowAdminControls] = useState(false);
 
-  // Real data from your EDGERACK system
+  // Real configuration data from the EDGERACK system at 192.168.222.184
   const configData = {
     general: {
       temperatureUnits: "Fahrenheit",

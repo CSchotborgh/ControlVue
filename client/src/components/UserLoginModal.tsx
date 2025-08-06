@@ -1,3 +1,11 @@
+/**
+ * EDGERACK Cooling Unit Control System - User Login Modal Component
+ * 
+ * Authentication modal providing secure access to the cooling unit monitoring system.
+ * This component handles user credential input and authentication for accessing
+ * sensitive system controls and configuration in industrial environments.
+ */
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,8 +19,14 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 
+/**
+ * User Login Modal Props Interface
+ * 
+ * Defines the properties required by the UserLoginModal component
+ * for proper modal lifecycle management and parent communication.
+ */
 interface UserLoginModalProps {
-  onClose: () => void;
+  onClose: () => void;  // Callback function to close the modal
 }
 
 export default function UserLoginModal({ onClose }: UserLoginModalProps) {

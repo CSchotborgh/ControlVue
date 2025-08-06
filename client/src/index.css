@@ -1,37 +1,54 @@
+/**
+ * EDGERACK Cooling Unit Control System - Global Styles
+ * 
+ * This file defines the complete visual design system for the EDGERACK cooling unit
+ * monitoring interface. It establishes the industrial aesthetic with the Lato font,
+ * dark theme color palette, and responsive design patterns optimized for data center
+ * environments and industrial monitoring displays.
+ */
+
+/* Import Lato font family for professional industrial interface */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;600;700;900&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Import Tailwind CSS framework layers */
+@tailwind base;      /* Reset styles and base HTML element styles */
+@tailwind components; /* Reusable component classes */
+@tailwind utilities;  /* Utility classes for rapid development */
 
+/**
+ * Light Theme Color Variables
+ * 
+ * Default color scheme for light mode (not used in EDGERACK, but required for shadcn/ui)
+ * These colors provide the foundation for the component system.
+ */
 :root {
-  --background: hsl(0, 0%, 100%);
-  --foreground: hsl(20, 14.3%, 4.1%);
-  --muted: hsl(60, 4.8%, 95.9%);
-  --muted-foreground: hsl(25, 5.3%, 44.7%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(20, 14.3%, 4.1%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(20, 14.3%, 4.1%);
-  --border: hsl(20, 5.9%, 90%);
-  --input: hsl(20, 5.9%, 90%);
-  --primary: hsl(207, 90%, 54%);
-  --primary-foreground: hsl(211, 100%, 99%);
-  --secondary: hsl(60, 4.8%, 95.9%);
-  --secondary-foreground: hsl(24, 9.8%, 10%);
-  --accent: hsl(60, 4.8%, 95.9%);
-  --accent-foreground: hsl(24, 9.8%, 10%);
-  --destructive: hsl(0, 84.2%, 60.2%);
-  --destructive-foreground: hsl(60, 9.1%, 97.8%);
-  --ring: hsl(20, 14.3%, 4.1%);
-  --radius: 0.5rem;
+  --background: hsl(0, 0%, 100%);              /* Pure white background */
+  --foreground: hsl(20, 14.3%, 4.1%);         /* Dark text color */
+  --muted: hsl(60, 4.8%, 95.9%);              /* Muted background areas */
+  --muted-foreground: hsl(25, 5.3%, 44.7%);   /* Muted text color */
+  --popover: hsl(0, 0%, 100%);                /* Popover background */
+  --popover-foreground: hsl(20, 14.3%, 4.1%); /* Popover text */
+  --card: hsl(0, 0%, 100%);                   /* Card background */
+  --card-foreground: hsl(20, 14.3%, 4.1%);    /* Card text */
+  --border: hsl(20, 5.9%, 90%);               /* Border color */
+  --input: hsl(20, 5.9%, 90%);                /* Input field background */
+  --primary: hsl(207, 90%, 54%);              /* Primary brand color (blue) */
+  --primary-foreground: hsl(211, 100%, 99%);  /* Primary button text */
+  --secondary: hsl(60, 4.8%, 95.9%);          /* Secondary button background */
+  --secondary-foreground: hsl(24, 9.8%, 10%); /* Secondary button text */
+  --accent: hsl(60, 4.8%, 95.9%);             /* Accent color */
+  --accent-foreground: hsl(24, 9.8%, 10%);    /* Accent text */
+  --destructive: hsl(0, 84.2%, 60.2%);        /* Error/destructive actions */
+  --destructive-foreground: hsl(60, 9.1%, 97.8%); /* Error text */
+  --ring: hsl(20, 14.3%, 4.1%);               /* Focus ring color */
+  --radius: 0.5rem;                           /* Default border radius */
   
-  /* EDGERACK Industrial Theme */
-  --edgerack-dark: hsl(215, 28%, 17%);
-  --edgerack-darker: hsl(215, 25%, 12%);
-  --edgerack-blue: hsl(217, 91%, 60%);
-  --edgerack-green: hsl(142, 76%, 36%);
-  --edgerack-slate: hsl(215, 20%, 65%);
+  /* EDGERACK Industrial Theme Variables */
+  --edgerack-dark: hsl(215, 28%, 17%);        /* Primary dark background */
+  --edgerack-darker: hsl(215, 25%, 12%);      /* Darker variant for depth */
+  --edgerack-blue: hsl(217, 91%, 60%);        /* Brand blue for highlights */
+  --edgerack-green: hsl(142, 76%, 36%);       /* Success/operational green */
+  --edgerack-slate: hsl(215, 20%, 65%);       /* Muted text color */
 }
 
 .dark {

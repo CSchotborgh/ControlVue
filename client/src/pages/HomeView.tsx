@@ -1,3 +1,12 @@
+/**
+ * EDGERACK Cooling Unit Control System - Home Dashboard View
+ * 
+ * The main dashboard page providing comprehensive real-time monitoring and control
+ * of the cooling unit system. This page displays key operational metrics, system
+ * status, control settings, and network information in an industrial interface
+ * designed for data center environments.
+ */
+
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@/components/ui/button';
@@ -5,25 +14,32 @@ import { Input } from '@/components/ui/input';
 import { Switch } from '@/components/ui/switch';
 import { Badge } from '@/components/ui/badge';
 
+/**
+ * Cooling Unit Data Interface
+ * 
+ * Type definition for real-time cooling unit sensor data and operational states.
+ * This interface matches the backend data structure and ensures type safety
+ * throughout the dashboard display and monitoring components.
+ */
 interface CoolingUnitData {
-  machineState: boolean;
-  selfCheckState: boolean;
-  coolingState: boolean;
-  heatingState: boolean;
-  dehumidifierState: boolean;
-  humidifierState: boolean;
-  dryContactAlarmingState: boolean;
-  returnAirTemp: number;
-  returnAirHumidity: number;
-  supplyAirTemp: number;
-  supplyAirHumidity: number;
-  internalFanRpm: number;
-  externalFanRpm: number;
-  condenserMotorRpm: number;
-  dischargeTemp: number;
-  suctionTemp: number;
-  evaporatorTemp: number;
-  acVoltage: number;
+  machineState: boolean;          // Main system power status
+  selfCheckState: boolean;        // Self-diagnostic mode indicator
+  coolingState: boolean;          // Cooling system operational status
+  heatingState: boolean;          // Heating system operational status
+  dehumidifierState: boolean;     // Dehumidifier operational status
+  humidifierState: boolean;       // Humidifier operational status
+  dryContactAlarmingState: boolean; // Alarm contact status
+  returnAirTemp: number;          // Return air temperature (°C)
+  returnAirHumidity: number;      // Return air humidity (%)
+  supplyAirTemp: number;          // Supply air temperature (°C)
+  supplyAirHumidity: number;      // Supply air humidity (%)
+  internalFanRpm: number;         // Internal circulation fan speed
+  externalFanRpm: number;         // External condenser fan speed
+  condenserMotorRpm: number;      // Compressor motor speed
+  dischargeTemp: number;          // Compressor discharge temperature (°C)
+  suctionTemp: number;            // Compressor suction temperature (°C)
+  evaporatorTemp: number;         // Evaporator coil temperature (°C)
+  acVoltage: number;              // AC electrical supply voltage
 }
 
 export default function HomeView() {

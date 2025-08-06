@@ -1,3 +1,12 @@
+/**
+ * EDGERACK Cooling Unit Control System - Administration View
+ * 
+ * System administration interface providing user management, system configuration,
+ * and log monitoring capabilities. This page is designed for system administrators
+ * to manage users, configure system settings, and monitor operational logs
+ * in industrial cooling unit deployments.
+ */
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';

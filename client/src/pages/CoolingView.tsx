@@ -1,33 +1,55 @@
+/**
+ * EDGERACK Cooling Unit Control System - Detailed Cooling Unit Readings View
+ * 
+ * Comprehensive monitoring page displaying all cooling unit sensors, operational
+ * states, and detailed metrics in expandable sections. This page provides the
+ * most detailed view of system performance for technical analysis and diagnostics.
+ */
+
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
+/**
+ * Extended Cooling Unit Data Interface
+ * 
+ * Comprehensive type definition including all available sensor readings and
+ * operational parameters. This extended interface includes additional metrics
+ * not shown on the main dashboard for detailed technical analysis.
+ */
 interface CoolingUnitData {
-  machineState: boolean;
-  selfCheckState: boolean;
-  coolingState: boolean;
-  heatingState: boolean;
-  dehumidifierState: boolean;
-  humidifierState: boolean;
-  dryContactAlarmingState: boolean;
-  returnAirTemp: number;
-  returnAirHumidity: number;
-  supplyAirTemp: number;
-  supplyAirHumidity: number;
-  internalFanRpm: number;
-  externalFanRpm: number;
-  condenserMotorRpm: number;
-  dischargeTemp: number;
-  suctionTemp: number;
-  evaporatorTemp: number;
-  condenserTemp: number;
-  outdoorTemp: number;
-  acVoltage: number;
-  compressorHeaterCurrent: number;
-  eevPosition: number;
-  highPressure: number;
-  lowPressure: number;
+  // Basic operational states
+  machineState: boolean;              // Main system power status
+  selfCheckState: boolean;            // Self-diagnostic mode
+  coolingState: boolean;              // Cooling system active
+  heatingState: boolean;              // Heating system active
+  dehumidifierState: boolean;         // Dehumidifier active
+  humidifierState: boolean;           // Humidifier active
+  dryContactAlarmingState: boolean;   // Alarm contact status
+  
+  // Temperature and humidity sensors
+  returnAirTemp: number;              // Return air temperature (°C)
+  returnAirHumidity: number;          // Return air humidity (%)
+  supplyAirTemp: number;              // Supply air temperature (°C)
+  supplyAirHumidity: number;          // Supply air humidity (%)
+  dischargeTemp: number;              // Compressor discharge temperature (°C)
+  suctionTemp: number;                // Compressor suction temperature (°C)
+  evaporatorTemp: number;             // Evaporator coil temperature (°C)
+  condenserTemp: number;              // Condenser temperature (°C)
+  outdoorTemp: number;                // Outdoor ambient temperature (°C)
+  
+  // Motor speeds and electrical measurements
+  internalFanRpm: number;             // Internal circulation fan speed
+  externalFanRpm: number;             // External condenser fan speed
+  condenserMotorRpm: number;          // Compressor motor speed
+  acVoltage: number;                  // AC electrical supply voltage
+  compressorHeaterCurrent: number;    // Compressor heater current draw
+  
+  // Advanced refrigeration metrics
+  eevPosition: number;                // Electronic expansion valve position
+  highPressure: number;               // High-side refrigerant pressure
+  lowPressure: number;                // Low-side refrigerant pressure
 }
 
 export default function CoolingView() {

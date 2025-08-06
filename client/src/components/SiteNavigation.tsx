@@ -1,12 +1,38 @@
+/**
+ * EDGERACK Cooling Unit Control System - Site Navigation Component
+ * 
+ * Primary navigation header providing access to all system pages and user authentication.
+ * This component maintains consistent navigation across the application with active state
+ * indication and responsive design for industrial monitoring environments.
+ */
+
 import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import UserLoginModal from './UserLoginModal';
 
+/**
+ * Site Navigation Component
+ * 
+ * Renders the main navigation header with the EDGERACK branding, page links,
+ * and user login functionality. Provides visual feedback for the active page
+ * and responsive design for different screen sizes.
+ * 
+ * @returns JSX element for the main site navigation
+ */
 export default function SiteNavigation() {
-  const [location] = useLocation();
-  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [location] = useLocation();                    // Current route location
+  const [showLoginModal, setShowLoginModal] = useState(false); // Login modal visibility
 
+  /**
+   * Active Route Check
+   * 
+   * Determines if the given path matches the current route for styling
+   * active navigation links with appropriate visual feedback.
+   * 
+   * @param path - Route path to check against current location
+   * @returns Boolean indicating if the path is currently active
+   */
   const isActive = (path: string) => {
     return location === path;
   };
