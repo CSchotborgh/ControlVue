@@ -161,7 +161,7 @@ export default function CoolingView() {
         {showStates && (
           <div className="cooling-content">
             <div className="cooling-metrics-grid">
-              <div className="cooling-metric-item">
+              <div className="cooling-metric-item bg-[#080510]">
                 <div className="cooling-metric-label">Machine:</div>
                 <div className="cooling-metric-value">
                   <Badge className={realData.machine === 'ON' ? 'status-badge-on' : 'status-badge-off'}>
