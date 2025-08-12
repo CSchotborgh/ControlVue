@@ -235,7 +235,7 @@ export default function HomeView() {
                     <tbody>
                       <tr>
                         <td className="font-medium bg-[#060511]">2025-08-05 12:20:53</td>
-                        <td>Display</td>
+                        <td className="bg-[#060511]">Display</td>
                         <td className="bg-[#060511]">Display</td>
                         <td><Badge className="status-badge-blue">State</Badge></td>
                         <td>Screen Awakened from SCREENSAVER by MOTION!</td>
