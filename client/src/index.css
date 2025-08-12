@@ -45,8 +45,8 @@
   /* Border color */
   --input: hsl(20, 5.9%, 90%);
   /* Input field background */
-  --primary: hsl(207, 90%, 54%);
-  /* Primary brand color (blue) */
+  --primary: hsl(262, 83%, 45%);
+  /* Primary brand color (dark purple) */
   --primary-foreground: hsl(211, 100%, 99%);
   /* Primary button text */
   --secondary: hsl(60, 4.8%, 95.9%);
@@ -71,107 +71,12 @@
   /* Primary dark background */
   --edgerack-darker: hsl(244, 25%, 12%);
   /* Darker variant for depth */
-  --edgerack-blue: hsl(217, 91%, 60%);
-  /* Brand blue for highlights */
+  --edgerack-purple: hsl(262, 83%, 55%);
+  /* Brand dark purple for highlights */
   --edgerack-green: hsl(142, 76%, 36%);
   /* Success/operational green */
   --edgerack-slate: hsl(215, 20%, 65%);
   /* Muted text color */
-
-  /* ===== COMPREHENSIVE COLOR SELECTOR PALETTE ===== */
-  
-  /* Primary Color Variants - Blue Spectrum */
-  --color-primary-50: hsl(217, 91%, 95%);     /* Ultra light blue */
-  --color-primary-100: hsl(217, 91%, 90%);    /* Very light blue */
-  --color-primary-200: hsl(217, 91%, 80%);    /* Light blue */
-  --color-primary-300: hsl(217, 91%, 70%);    /* Medium light blue */
-  --color-primary-400: hsl(217, 91%, 60%);    /* Default blue */
-  --color-primary-500: hsl(217, 91%, 50%);    /* Medium blue */
-  --color-primary-600: hsl(217, 91%, 40%);    /* Dark blue */
-  --color-primary-700: hsl(217, 91%, 30%);    /* Very dark blue */
-  --color-primary-800: hsl(217, 91%, 20%);    /* Ultra dark blue */
-  --color-primary-900: hsl(217, 91%, 10%);    /* Deepest blue */
-
-  /* Secondary Color Variants - Green Spectrum */
-  --color-secondary-50: hsl(142, 76%, 95%);   /* Ultra light green */
-  --color-secondary-100: hsl(142, 76%, 88%);  /* Very light green */
-  --color-secondary-200: hsl(142, 76%, 78%);  /* Light green */
-  --color-secondary-300: hsl(142, 76%, 56%);  /* Medium light green */
-  --color-secondary-400: hsl(142, 76%, 46%);  /* Medium green */
-  --color-secondary-500: hsl(142, 76%, 36%);  /* Default green */
-  --color-secondary-600: hsl(142, 76%, 26%);  /* Dark green */
-  --color-secondary-700: hsl(142, 76%, 18%);  /* Very dark green */
-  --color-secondary-800: hsl(142, 76%, 12%);  /* Ultra dark green */
-  --color-secondary-900: hsl(142, 76%, 8%);   /* Deepest green */
-
-  /* Neutral Gray Variants */
-  --color-neutral-50: hsl(215, 20%, 95%);     /* Ultra light gray */
-  --color-neutral-100: hsl(215, 20%, 88%);    /* Very light gray */
-  --color-neutral-200: hsl(215, 20%, 78%);    /* Light gray */
-  --color-neutral-300: hsl(215, 20%, 68%);    /* Medium light gray */
-  --color-neutral-400: hsl(215, 20%, 58%);    /* Medium gray */
-  --color-neutral-500: hsl(215, 20%, 48%);    /* Default gray */
-  --color-neutral-600: hsl(215, 20%, 38%);    /* Dark gray */
-  --color-neutral-700: hsl(215, 20%, 28%);    /* Very dark gray */
-  --color-neutral-800: hsl(215, 20%, 18%);    /* Ultra dark gray */
-  --color-neutral-900: hsl(215, 20%, 10%);    /* Deepest gray */
-
-  /* Warning Colors - Orange/Amber Spectrum */
-  --color-warning-50: hsl(45, 93%, 95%);      /* Ultra light amber */
-  --color-warning-100: hsl(45, 93%, 88%);     /* Very light amber */
-  --color-warning-200: hsl(45, 93%, 78%);     /* Light amber */
-  --color-warning-300: hsl(45, 93%, 68%);     /* Medium light amber */
-  --color-warning-400: hsl(45, 93%, 58%);     /* Medium amber */
-  --color-warning-500: hsl(45, 93%, 48%);     /* Default amber */
-  --color-warning-600: hsl(45, 93%, 38%);     /* Dark amber */
-  --color-warning-700: hsl(45, 93%, 28%);     /* Very dark amber */
-  --color-warning-800: hsl(45, 93%, 18%);     /* Ultra dark amber */
-  --color-warning-900: hsl(45, 93%, 10%);     /* Deepest amber */
-
-  /* Error/Danger Colors - Red Spectrum */
-  --color-error-50: hsl(0, 84%, 95%);         /* Ultra light red */
-  --color-error-100: hsl(0, 84%, 88%);        /* Very light red */
-  --color-error-200: hsl(0, 84%, 78%);        /* Light red */
-  --color-error-300: hsl(0, 84%, 68%);        /* Medium light red */
-  --color-error-400: hsl(0, 84%, 60%);        /* Medium red */
-  --color-error-500: hsl(0, 84%, 50%);        /* Default red */
-  --color-error-600: hsl(0, 84%, 40%);        /* Dark red */
-  --color-error-700: hsl(0, 84%, 30%);        /* Very dark red */
-  --color-error-800: hsl(0, 84%, 20%);        /* Ultra dark red */
-  --color-error-900: hsl(0, 84%, 12%);        /* Deepest red */
-
-  /* Info Colors - Cyan Spectrum */
-  --color-info-50: hsl(195, 100%, 95%);       /* Ultra light cyan */
-  --color-info-100: hsl(195, 100%, 88%);      /* Very light cyan */
-  --color-info-200: hsl(195, 100%, 78%);      /* Light cyan */
-  --color-info-300: hsl(195, 100%, 68%);      /* Medium light cyan */
-  --color-info-400: hsl(195, 100%, 58%);      /* Medium cyan */
-  --color-info-500: hsl(195, 100%, 48%);      /* Default cyan */
-  --color-info-600: hsl(195, 100%, 38%);      /* Dark cyan */
-  --color-info-700: hsl(195, 100%, 28%);      /* Very dark cyan */
-  --color-info-800: hsl(195, 100%, 18%);      /* Ultra dark cyan */
-  --color-info-900: hsl(195, 100%, 10%);      /* Deepest cyan */
-
-  /* Status Indicator Colors */
-  --color-online: hsl(142, 76%, 36%);         /* Online/operational status */
-  --color-offline: hsl(0, 84%, 50%);          /* Offline/error status */
-  --color-warning-status: hsl(45, 93%, 58%);  /* Warning status */
-  --color-maintenance: hsl(45, 93%, 68%);     /* Maintenance mode */
-  --color-inactive: hsl(215, 20%, 48%);       /* Inactive/disabled */
-
-  /* Industrial Theme Background Colors */
-  --bg-primary: hsl(215, 28%, 17%);           /* Primary dark background */
-  --bg-secondary: hsl(215, 25%, 12%);         /* Secondary darker background */
-  --bg-tertiary: hsl(215, 22%, 8%);          /* Tertiary darkest background */
-  --bg-surface: hsl(215, 25%, 20%);          /* Surface/card background */
-  --bg-overlay: hsla(215, 25%, 12%, 0.9);    /* Modal/overlay background */
-
-  /* Industrial Text Colors */
-  --text-primary: hsl(0, 0%, 95%);            /* Primary white text */
-  --text-secondary: hsl(215, 20%, 75%);       /* Secondary muted text */
-  --text-tertiary: hsl(215, 20%, 55%);       /* Tertiary dimmed text */
-  --text-disabled: hsl(215, 20%, 35%);       /* Disabled text */
-  --text-inverse: hsl(215, 28%, 17%);        /* Dark text on light backgrounds */
 }
 
 .dark {
@@ -185,7 +90,7 @@
   --card-foreground: hsl(0, 0%, 98%);
   --border: hsl(244, 25%, 12%);
   --input: hsl(252, 25%, 12%);
-  --primary: hsl(217, 91%, 60%);
+  --primary: hsl(262, 83%, 55%);
   --primary-foreground: hsl(0, 0%, 98%);
   --secondary: hsl(240, 25%, 12%);
   --secondary-foreground: hsl(0, 0%, 98%);
