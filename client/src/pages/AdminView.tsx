@@ -80,7 +80,7 @@ export default function AdminView() {
                 Configure basic system settings and parameters
               </CardDescription>
             </CardHeader>
-            <CardContent className="p-6 pt-0 space-y-4 bg-[#0c0c1c]">
+            <CardContent className="p-6 pt-0 space-y-4 bg-[#0c0c1c] rounded-b-lg">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="unitName" className="text-white">Unit Name</Label>
@@ -135,7 +135,7 @@ export default function AdminView() {
                 Manage user accounts and permissions
               </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="rounded-b-lg">
               <div className="relative overflow-x-auto">
                 <table className="edgerack-table">
                   <thead>
@@ -185,7 +185,7 @@ export default function AdminView() {
                 View and manage system logs and events
               </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="rounded-b-lg">
               <div className="flex gap-4 mb-4">
                 <Button onClick={exportLogs} className="bg-blue-600 hover:bg-blue-700">
                   Export Logs
@@ -234,7 +234,7 @@ export default function AdminView() {
                 Backup and restore system configuration and data
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-6 rounded-b-lg">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold text-white">Create Backup</h3>
