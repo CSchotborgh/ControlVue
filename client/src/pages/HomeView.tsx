@@ -63,6 +63,17 @@ export default function HomeView() {
   // Network and system information
   const [showNetworking, setShowNetworking] = useState(false);
   const [showSystem, setShowSystem] = useState(false);
+  const [expandAll, setExpandAll] = useState(false);
+
+  // Function to toggle all sections
+  const toggleExpandAll = () => {
+    const newExpandState = !expandAll;
+    setExpandAll(newExpandState);
+    setShowCabinetSignals(newExpandState);
+    setShowInternalGrid(newExpandState);
+    setShowNetworking(newExpandState);
+    setShowSystem(newExpandState);
+  };
   const [networkInfo] = useState({
     primaryLinkStatus: 'up',
     primaryIPv4: '192.168.222.184',
@@ -123,6 +134,17 @@ export default function HomeView() {
 
   return (
     <main className="container mx-auto px-4 py-8 text-white">
+      {/* Expand All Button */}
+      <div className="flex justify-end mb-4">
+        <Button
+          onClick={toggleExpandAll}
+          variant="outline"
+          className="border-gray-600 text-white hover:bg-gray-700"
+        >
+          {expandAll ? 'Collapse All' : 'Expand All'}
+        </Button>
+      </div>
+      
       {/* System Error Alert */}
       {systemError && (
         <div className="mb-6 p-4 bg-red-900/80 border border-red-600/50 rounded-lg" style={{
@@ -137,7 +159,7 @@ export default function HomeView() {
         </div>
       )}
       {/* Cabinet Signals Section */}
-      <div className="max-h-fit my-6 grid grid-rows-1 border rounded-lg bg-[#060511] mt-[2px] mb-[2px]">
+      <div className="max-h-fit my-6 grid grid-rows-1 border rounded-lg bg-[#060511] mt-[2px] mb-[2px] shadow-lg">
         <div className="my-6 mx-2">
           <div className="container flex flex-row">
             <div className="flex items-start text-2xl">Cabinet</div>
@@ -298,7 +320,7 @@ export default function HomeView() {
         </div>
       </div>
       {/* Top level container for Cooling Unit section */}
-      <div className="max-h-fit my-6 grid grid-rows-1 border rounded-lg bg-[#060511]">
+      <div className="max-h-fit my-6 grid grid-rows-1 border rounded-lg bg-[#060511] shadow-lg">
         <div className="my-6 mx-2">
           <div className="container flex flex-row">
             <div className="flex items-start text-2xl">Cooling Unit</div>
@@ -451,7 +473,7 @@ export default function HomeView() {
         </div>
       </div>
       {/* Networking Section */}
-      <div className="max-h-fit my-6 grid grid-rows-1 border rounded-lg bg-[#060511]">
+      <div className="max-h-fit my-6 grid grid-rows-1 border rounded-lg bg-[#060511] shadow-lg">
         <div className="my-6 mx-2">
           <div className="container flex flex-row">
             <div className="flex items-start text-2xl">Networking</div>
@@ -534,7 +556,7 @@ export default function HomeView() {
         </div>
       </div>
       {/* System Section */}
-      <div className="max-h-fit my-6 grid grid-rows-1 border rounded-lg bg-[#060511]">
+      <div className="max-h-fit my-6 grid grid-rows-1 border rounded-lg bg-[#060511] shadow-lg">
         <div className="my-6 mx-2">
           <div className="container flex flex-row">
             <div className="flex items-start text-2xl">System</div>
