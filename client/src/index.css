@@ -51,34 +51,27 @@
   --edgerack-slate: hsl(215, 20%, 65%);       /* Muted text color */
 }
 
-/**
- * Dark Theme Color Variables - EDGERACK Industrial Palette
- * 
- * Updated color scheme using deep industrial blues (HSL 245-250, 43-55%, 4-11%)
- * for a more sophisticated and professional data center monitoring interface.
- * This palette provides better contrast and visual hierarchy for critical information.
- */
 .dark {
-  --background: hsl(248, 50%, 8%);             /* Deep industrial background */
-  --foreground: hsl(0, 0%, 98%);               /* High contrast white text */
-  --muted: hsl(245, 55%, 4%);                  /* Darkest muted areas */
-  --muted-foreground: hsl(247, 45%, 65%);      /* Muted text with blue tint */
-  --popover: hsl(248, 50%, 8%);                /* Popover background matches main */
-  --popover-foreground: hsl(0, 0%, 98%);       /* Popover text */
-  --card: hsl(247, 48%, 9%);                   /* Card background slightly lighter */
-  --card-foreground: hsl(0, 0%, 98%);          /* Card text */
-  --border: hsl(246, 52%, 6%);                 /* Subtle borders */
-  --input: hsl(250, 43%, 11%);                 /* Input field background */
-  --primary: hsl(217, 91%, 60%);               /* Keep existing primary blue */
-  --primary-foreground: hsl(0, 0%, 98%);       /* Primary button text */
-  --secondary: hsl(249, 47%, 10%);             /* Secondary elements */
-  --secondary-foreground: hsl(0, 0%, 98%);     /* Secondary text */
-  --accent: hsl(247, 49%, 12%);                /* Accent background */
-  --accent-foreground: hsl(0, 0%, 98%);        /* Accent text */
-  --destructive: hsl(0, 62.8%, 30.6%);         /* Keep existing error red */
-  --destructive-foreground: hsl(0, 0%, 98%);   /* Error text */
-  --ring: hsl(248, 20%, 75%);                  /* Focus ring with blue tint */
-  --radius: 0.5rem;                            /* Border radius unchanged */
+  --background: hsl(215, 28%, 17%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(215, 25%, 12%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --popover: hsl(215, 28%, 17%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(215, 28%, 17%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(215, 25%, 12%);
+  --input: hsl(215, 25%, 12%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(215, 25%, 12%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(215, 25%, 12%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
 }
 
 @layer base {
