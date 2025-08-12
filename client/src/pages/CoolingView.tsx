@@ -161,7 +161,7 @@ export default function CoolingView() {
         {showStates && (
           <div className="cooling-content">
             <div className="cooling-metrics-grid">
-              <div className="cooling-metric-item bg-[#080510]">
+              <div className="cooling-metric-item bg-[#060511]">
                 <div className="cooling-metric-label">Machine:</div>
                 <div className="cooling-metric-value">
                   <Badge className={realData.machine === 'ON' ? 'status-badge-on' : 'status-badge-off'}>
@@ -170,7 +170,7 @@ export default function CoolingView() {
                 </div>
               </div>
               
-              <div className="cooling-metric-item">
+              <div className="cooling-metric-item bg-[#060511]">
                 <div className="cooling-metric-label">Self-Check:</div>
                 <div className="cooling-metric-value">
                   <Badge className={realData.selfCheck === 'ON' ? 'status-badge-on' : 'status-badge-off'}>
@@ -179,7 +179,7 @@ export default function CoolingView() {
                 </div>
               </div>
               
-              <div className="cooling-metric-item">
+              <div className="cooling-metric-item bg-[#060511]">
                 <div className="cooling-metric-label">Cooling:</div>
                 <div className="cooling-metric-value">
                   <Badge className={realData.cooling === 'ON' ? 'status-badge-on' : 'status-badge-off'}>
@@ -188,7 +188,7 @@ export default function CoolingView() {
                 </div>
               </div>
               
-              <div className="cooling-metric-item">
+              <div className="cooling-metric-item bg-[#060511]">
                 <div className="cooling-metric-label">Heating:</div>
                 <div className="cooling-metric-value">
                   <Badge className={realData.heating === 'ON' ? 'status-badge-on' : 'status-badge-off'}>
@@ -197,7 +197,7 @@ export default function CoolingView() {
                 </div>
               </div>
               
-              <div className="cooling-metric-item">
+              <div className="cooling-metric-item bg-[#060511]">
                 <div className="cooling-metric-label">Dehumidifier:</div>
                 <div className="cooling-metric-value">
                   <Badge className={realData.dehumidifier === 'ON' ? 'status-badge-on' : 'status-badge-off'}>
@@ -206,7 +206,7 @@ export default function CoolingView() {
                 </div>
               </div>
               
-              <div className="cooling-metric-item">
+              <div className="cooling-metric-item bg-[#060511]">
                 <div className="cooling-metric-label">Humidifier:</div>
                 <div className="cooling-metric-value">
                   <Badge className={realData.humidifier === 'ON' ? 'status-badge-on' : 'status-badge-off'}>
@@ -215,7 +215,7 @@ export default function CoolingView() {
                 </div>
               </div>
               
-              <div className="cooling-metric-item">
+              <div className="cooling-metric-item bg-[#060511]">
                 <div className="cooling-metric-label">Alarm Active:</div>
                 <div className="cooling-metric-value">
                   <Badge className={realData.alarmActive === 'YES' ? 'status-badge-off' : 'status-badge-on'}>
