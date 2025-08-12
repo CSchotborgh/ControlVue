@@ -12,6 +12,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";         // Toast notifications for user feedback
 import { TooltipProvider } from "@/components/ui/tooltip"; // Tooltip provider for enhanced UX
 import { AuthProvider } from "@/hooks/use-auth";           // Authentication context and state
+import { ThemeProvider } from "./contexts/ThemeContext";   // Theme switching context for Blue/ECX themes
 import SiteNavigation from "@/components/SiteNavigation";  // Main navigation header component
 
 // Page components for the five main application routes
@@ -31,7 +32,7 @@ import NotFound from "@/pages/not-found";     // 404 fallback page
  */
 function Router() {
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
+    <div className="bg-background text-foreground min-h-screen">
       {/* Site navigation header - always visible across all pages */}
       <SiteNavigation />
       
@@ -58,16 +59,19 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Tooltip provider enables hover information throughout the app */}
-      <TooltipProvider>
-        {/* Authentication context manages login state and user sessions */}
-        <AuthProvider>
-          {/* Toast notifications for user feedback on actions */}
-          <Toaster />
-          {/* Main application routing and page content */}
-          <Router />
-        </AuthProvider>
-      </TooltipProvider>
+      {/* Theme provider manages Blue/ECX theme switching */}
+      <ThemeProvider>
+        {/* Tooltip provider enables hover information throughout the app */}
+        <TooltipProvider>
+          {/* Authentication context manages login state and user sessions */}
+          <AuthProvider>
+            {/* Toast notifications for user feedback on actions */}
+            <Toaster />
+            {/* Main application routing and page content */}
+            <Router />
+          </AuthProvider>
+        </TooltipProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

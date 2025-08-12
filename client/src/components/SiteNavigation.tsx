@@ -10,6 +10,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import UserLoginModal from './UserLoginModal';
+import ThemeToggle from './ThemeToggle';
 
 /**
  * Site Navigation Component
@@ -39,7 +40,7 @@ export default function SiteNavigation() {
 
   return (
     <>
-      <nav className="bg-gray-800 border-b border-gray-700">
+      <nav className="bg-card border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
@@ -103,7 +104,11 @@ export default function SiteNavigation() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center gap-3">
+              {/* Theme toggle for switching between Blue and ECX themes */}
+              <ThemeToggle />
+              
+              {/* Login button */}
               <Button
                 variant="ghost"
                 onClick={() => setShowLoginModal(true)}

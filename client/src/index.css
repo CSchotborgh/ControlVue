@@ -51,6 +51,109 @@
   --edgerack-slate: hsl(215, 20%, 65%);       /* Muted text color */
 }
 
+/**
+ * Default Theme Application
+ * 
+ * Apply Blue theme as default when no theme class is present.
+ * This ensures the application has proper styling during initial load
+ * before the theme context initializes.
+ */
+:root:not(.theme-ecx) {
+  --background: hsl(215, 28%, 17%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(215, 25%, 12%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --popover: hsl(215, 28%, 17%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(215, 28%, 17%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(215, 25%, 12%);
+  --input: hsl(215, 25%, 12%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(215, 25%, 12%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(215, 25%, 12%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+/**
+ * Blue Theme (Original EDGERACK Theme)
+ * 
+ * The original blue-accented theme used in the EDGERACK system.
+ * This theme maintains the established visual identity with blue highlights
+ * and industrial dark backgrounds for optimal data center monitoring.
+ */
+.theme-blue {
+  --background: hsl(215, 28%, 17%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(215, 25%, 12%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --popover: hsl(215, 28%, 17%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(215, 28%, 17%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(215, 25%, 12%);
+  --input: hsl(215, 25%, 12%);
+  --primary: hsl(217, 91%, 60%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(215, 25%, 12%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(215, 25%, 12%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+/**
+ * ECX Theme (Custom Dark Theme)
+ * 
+ * New ECX-branded theme with deep dark colors and gradient background.
+ * Features the specified foreground color #060501 and custom gradient background
+ * for a distinctive visual experience in industrial monitoring environments.
+ */
+.theme-ecx {
+  --background: hsl(254, 55%, 4%);         /* Custom ECX foreground as background base */
+  --foreground: hsl(0, 0%, 95%);           /* Light text for contrast */
+  --muted: hsl(254, 45%, 6%);              /* Slightly lighter muted areas */
+  --muted-foreground: hsl(254, 15%, 65%);  /* Muted text with ECX tint */
+  --popover: hsl(254, 55%, 4%);            /* Popover matches background */
+  --popover-foreground: hsl(0, 0%, 95%);   /* Light popover text */
+  --card: hsl(254, 55%, 4%);               /* Card background matches theme */
+  --card-foreground: hsl(0, 0%, 95%);      /* Light card text */
+  --border: hsl(254, 30%, 15%);            /* Subtle borders */
+  --input: hsl(254, 30%, 8%);              /* Input field backgrounds */
+  --primary: hsl(280, 70%, 50%);           /* Purple accent for ECX branding */
+  --primary-foreground: hsl(0, 0%, 98%);   /* Primary button text */
+  --secondary: hsl(254, 30%, 12%);         /* Secondary elements */
+  --secondary-foreground: hsl(0, 0%, 90%); /* Secondary text */
+  --accent: hsl(280, 60%, 45%);            /* Accent color matching ECX purple */
+  --accent-foreground: hsl(0, 0%, 98%);    /* Accent text */
+  --destructive: hsl(0, 70%, 50%);         /* Error states */
+  --destructive-foreground: hsl(0, 0%, 98%); /* Error text */
+  --ring: hsl(280, 50%, 60%);              /* Focus rings */
+  --radius: 0.5rem;                        /* Border radius */
+}
+
+/**
+ * ECX Theme Gradient Background
+ * 
+ * Applies the custom gradient background specified for the ECX theme:
+ * gradient(135deg, #060511 0%, #0b0822 50%, #0b0823 100%)
+ */
+.theme-ecx body {
+  background: linear-gradient(135deg, #060511 0%, #0b0822 50%, #0b0823 100%);
+  background-attachment: fixed; /* Keeps gradient fixed during scrolling */
+  min-height: 100vh;
+}
+
+/* Fallback for dark class (backward compatibility) */
 .dark {
   --background: hsl(215, 28%, 17%);
   --foreground: hsl(0, 0%, 98%);
@@ -82,11 +185,18 @@
   body {
     @apply antialiased bg-background text-foreground;
     font-family: 'Lato', sans-serif;
-    font-weight: 400; /* Normal weight for body text */
+    font-weight: 400; /* Normal weight for optimal readability */
   }
 }
 
 /* Lato Font Weight Rules */
+/**
+ * Lato Font Weight Application Rules
+ * 
+ * Ensures consistent typography throughout the EDGERACK system using
+ * appropriate font weights for different content types and UI elements.
+ */
+
 /* Normal weight for body text and general content */
 body, p, span, div, td, li, .text-gray-300, .text-gray-400, .text-white {
   font-family: 'Lato', sans-serif;
