@@ -85,7 +85,6 @@ export default function ConfigView() {
   return (
     <main className="container mx-auto px-4 py-8 text-white">
       <h1 className="text-2xl font-semibold mb-8">Configuration:</h1>
-
       {/* General Settings Section */}
       <div className="cooling-section">
         <div className="cooling-header">
@@ -98,7 +97,7 @@ export default function ConfigView() {
         </div>
         
         {showGeneralSettings && (
-          <div className="cooling-content">
+          <div className="cooling-content bg-[#0a0a19]">
             <div className="space-y-6">
               {/* Temperature Units */}
               <div className="flex items-center justify-between">
@@ -159,7 +158,6 @@ export default function ConfigView() {
           </div>
         )}
       </div>
-
       {/* Network Settings Section */}
       <div className="cooling-section">
         <div className="cooling-header">
@@ -349,7 +347,6 @@ export default function ConfigView() {
           </div>
         )}
       </div>
-
       {/* Administration Controls Section */}
       <div className="cooling-section">
         <div className="cooling-header">
