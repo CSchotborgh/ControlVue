@@ -20,26 +20,26 @@
   --vt-c-black-mute: #282828;
   --vt-c-indigo: #2c3e50;
   
-  /* Semantic Color Mapping */
-  --color-background: var(--vt-c-black);
-  --color-background-soft: var(--vt-c-black-soft);
-  --color-background-mute: var(--vt-c-black-mute);
-  --color-text: var(--vt-c-white);
-  --color-heading: var(--vt-c-white);
+  /* Semantic Color Mapping - Replit Style */
+  --color-background: hsl(222, 28%, 8%);
+  --color-background-soft: hsl(217, 33%, 17%);
+  --color-background-mute: hsl(217, 33%, 17%);
+  --color-text: hsl(213, 31%, 91%);
+  --color-heading: hsl(213, 31%, 91%);
 
   /* ===== COMPREHENSIVE COLOR SELECTOR EXTENSIONS ===== */
   
-  /* Vue Industrial Dark Purple Spectrum */
-  --vue-purple-ultra-light: hsl(262, 85%, 97%);  /* Ultra light purple */
-  --vue-purple-very-light: hsl(262, 85%, 92%);   /* Very light purple */
-  --vue-purple-light: hsl(262, 85%, 82%);        /* Light purple */
-  --vue-purple-medium-light: hsl(262, 85%, 72%); /* Medium light purple */
-  --vue-purple-medium: hsl(262, 85%, 62%);       /* Medium purple */
-  --vue-purple-default: hsl(262, 85%, 52%);      /* Default purple */
-  --vue-purple-dark: hsl(262, 85%, 42%);         /* Dark purple */
-  --vue-purple-very-dark: hsl(262, 85%, 32%);    /* Very dark purple */
-  --vue-purple-ultra-dark: hsl(262, 85%, 22%);   /* Ultra dark purple */
-  --vue-purple-deepest: hsl(262, 85%, 12%);      /* Deepest purple */
+  /* Vue Industrial Replit Blue Spectrum */
+  --vue-replit-ultra-light: hsl(217, 91%, 97%);  /* Ultra light Replit blue */
+  --vue-replit-very-light: hsl(217, 91%, 92%);   /* Very light Replit blue */
+  --vue-replit-light: hsl(217, 91%, 82%);        /* Light Replit blue */
+  --vue-replit-medium-light: hsl(217, 91%, 72%); /* Medium light Replit blue */
+  --vue-replit-medium: hsl(217, 91%, 62%);       /* Medium Replit blue */
+  --vue-replit-default: hsl(217, 91%, 59%);      /* Default Replit blue */
+  --vue-replit-dark: hsl(217, 91%, 50%);         /* Dark Replit blue */
+  --vue-replit-very-dark: hsl(217, 91%, 40%);    /* Very dark Replit blue */
+  --vue-replit-ultra-dark: hsl(217, 91%, 30%);   /* Ultra dark Replit blue */
+  --vue-replit-deepest: hsl(217, 91%, 20%);      /* Deepest Replit blue */
 
   /* Vue Industrial Green Spectrum */
   --vue-green-ultra-light: hsl(140, 80%, 95%);   /* Ultra light green */
@@ -96,7 +96,7 @@
   --badge-warning-text: #000000;                 /* Warning badge text */
   --badge-error-bg: var(--vue-red-default);      /* Error badge background */
   --badge-error-text: #ffffff;                   /* Error badge text */
-  --badge-info-bg: var(--vue-purple-default);    /* Info badge background */
+  --badge-info-bg: var(--vue-replit-default);    /* Info badge background */
   --badge-info-text: #ffffff;                    /* Info badge text */
   --badge-neutral-bg: hsl(215, 20%, 48%);        /* Neutral badge background */
   --badge-neutral-text: #ffffff;                 /* Neutral badge text */
@@ -110,11 +110,11 @@
   --table-cell-text: #ffffff;                    /* Table cell text color */
 
   /* Interface Enhancement Colors */
-  --interface-primary: var(--vue-purple-default); /* Primary interface color */
+  --interface-primary: var(--vue-replit-default); /* Primary interface color */
   --interface-secondary: var(--vue-green-default); /* Secondary interface color */
-  --interface-accent: var(--vue-purple-dark);     /* Accent interface color */
-  --interface-muted: hsl(262, 20%, 55%);         /* Muted interface color */
-  --interface-disabled: hsl(262, 20%, 35%);      /* Disabled interface color */
+  --interface-accent: var(--vue-replit-dark);     /* Accent interface color */
+  --interface-muted: hsl(215, 20.2%, 65.1%);     /* Muted interface color (Replit muted) */
+  --interface-disabled: hsl(217, 33%, 17%);      /* Disabled interface color */
 }
 
 @layer components {
@@ -141,7 +141,8 @@
   }
 
   .status-badge-blue {
-    @apply bg-purple-600 text-white px-2.5 py-0.5 rounded flex items-center justify-center;
+    @apply text-white px-2.5 py-0.5 rounded flex items-center justify-center;
+    background-color: hsl(217, 91%, 59%);
   }
 
   .status-badge-purple {
@@ -171,7 +172,8 @@
 
   /* Router link styling */
   .router-link-exact-active {
-    @apply font-bold underline decoration-dotted text-purple-400;
+    @apply font-bold underline decoration-dotted;
+    color: hsl(217, 91%, 59%);
     text-underline-offset: 4px;
   }
 }
@@ -187,9 +189,11 @@
   opacity: 0;
 }
 
-/* Body styling */
+/* Body styling - Replit Theme */
 body {
-  @apply min-h-screen bg-gray-900 text-white;
+  @apply min-h-screen text-white;
+  background-color: hsl(222, 28%, 8%);
+  color: hsl(213, 31%, 91%);
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;

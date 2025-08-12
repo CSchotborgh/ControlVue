@@ -53,17 +53,17 @@ export default {
         },
         /* ===== COMPREHENSIVE COLOR SELECTOR EXTENSIONS ===== */
         
-        /* Primary Color Spectrum Extensions - Dark Purple */
-        "primary-50": "hsl(262, 83%, 95%)",
-        "primary-100": "hsl(262, 83%, 90%)",
-        "primary-200": "hsl(262, 83%, 80%)",
-        "primary-300": "hsl(262, 83%, 70%)",
-        "primary-400": "hsl(262, 83%, 60%)",
-        "primary-500": "hsl(262, 83%, 50%)",
-        "primary-600": "hsl(262, 83%, 40%)",
-        "primary-700": "hsl(262, 83%, 30%)",
-        "primary-800": "hsl(262, 83%, 20%)",
-        "primary-900": "hsl(262, 83%, 10%)",
+        /* Primary Color Spectrum Extensions - Replit Blue */
+        "primary-50": "hsl(217, 91%, 95%)",
+        "primary-100": "hsl(217, 91%, 90%)",
+        "primary-200": "hsl(217, 91%, 80%)",
+        "primary-300": "hsl(217, 91%, 70%)",
+        "primary-400": "hsl(217, 91%, 60%)",
+        "primary-500": "hsl(217, 91%, 59%)",
+        "primary-600": "hsl(217, 91%, 50%)",
+        "primary-700": "hsl(217, 91%, 40%)",
+        "primary-800": "hsl(217, 91%, 30%)",
+        "primary-900": "hsl(217, 91%, 20%)",
         
         /* Secondary Color Spectrum Extensions */
         "secondary-50": "var(--color-secondary-50)",
