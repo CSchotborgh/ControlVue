@@ -31,7 +31,7 @@ import NotFound from "@/pages/not-found";     // 404 fallback page
  */
 function Router() {
   return (
-    <div className="text-white min-h-screen bg-[141028]">
+    <div className="text-white min-h-screen bg-[#060511]">
       {/* Site navigation header - always visible across all pages */}
       <SiteNavigation />
       {/* Main routing configuration for the five system pages */}
