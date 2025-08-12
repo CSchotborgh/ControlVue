@@ -512,7 +512,7 @@ select {
 }
 
 .cooling-content {
-  @apply p-6 transition-all duration-500 ease-in-out;
+  @apply p-6 transition-all duration-500 ease-in-out rounded-b-lg;
 }
 
 .cooling-metrics-grid {

@@ -252,7 +252,7 @@ export default function UpgradeView() {
               Released: {releaseNotes.releaseDate}
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="p-6 pt-0 space-y-4 bg-[#0b0b1a]">
             <div>
               <h4 className="font-semibold text-white mb-2">New Features & Improvements</h4>
               <ul className="space-y-1 text-sm text-gray-300">
