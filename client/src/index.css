@@ -11,9 +11,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;600;700;900&display=swap');
 
 /* Import Tailwind CSS framework layers */
-@tailwind base;      /* Reset styles and base HTML element styles */
-@tailwind components; /* Reusable component classes */
-@tailwind utilities;  /* Utility classes for rapid development */
+@tailwind base;
+/* Reset styles and base HTML element styles */
+@tailwind components;
+/* Reusable component classes */
+@tailwind utilities;
+/* Utility classes for rapid development */
 
 /**
  * Light Theme Color Variables
@@ -22,51 +25,171 @@
  * These colors provide the foundation for the component system.
  */
 :root {
-  --background: hsl(0, 0%, 100%);              /* Pure white background */
-  --foreground: hsl(20, 14.3%, 4.1%);         /* Dark text color */
-  --muted: hsl(60, 4.8%, 95.9%);              /* Muted background areas */
-  --muted-foreground: hsl(25, 5.3%, 44.7%);   /* Muted text color */
-  --popover: hsl(0, 0%, 100%);                /* Popover background */
-  --popover-foreground: hsl(20, 14.3%, 4.1%); /* Popover text */
-  --card: hsl(0, 0%, 100%);                   /* Card background */
-  --card-foreground: hsl(20, 14.3%, 4.1%);    /* Card text */
-  --border: hsl(20, 5.9%, 90%);               /* Border color */
-  --input: hsl(20, 5.9%, 90%);                /* Input field background */
-  --primary: hsl(207, 90%, 54%);              /* Primary brand color (blue) */
-  --primary-foreground: hsl(211, 100%, 99%);  /* Primary button text */
-  --secondary: hsl(60, 4.8%, 95.9%);          /* Secondary button background */
-  --secondary-foreground: hsl(24, 9.8%, 10%); /* Secondary button text */
-  --accent: hsl(60, 4.8%, 95.9%);             /* Accent color */
-  --accent-foreground: hsl(24, 9.8%, 10%);    /* Accent text */
-  --destructive: hsl(0, 84.2%, 60.2%);        /* Error/destructive actions */
-  --destructive-foreground: hsl(60, 9.1%, 97.8%); /* Error text */
-  --ring: hsl(20, 14.3%, 4.1%);               /* Focus ring color */
-  --radius: 0.5rem;                           /* Default border radius */
-  
+  --background: hsl(0, 0%, 100%);
+  /* Pure white background */
+  --foreground: hsl(20, 14.3%, 4.1%);
+  /* Dark text color */
+  --muted: hsl(60, 4.8%, 95.9%);
+  /* Muted background areas */
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  /* Muted text color */
+  --popover: hsl(0, 0%, 100%);
+  /* Popover background */
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  /* Popover text */
+  --card: hsl(0, 0%, 100%);
+  /* Card background */
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  /* Card text */
+  --border: hsl(20, 5.9%, 90%);
+  /* Border color */
+  --input: hsl(20, 5.9%, 90%);
+  /* Input field background */
+  --primary: hsl(207, 90%, 54%);
+  /* Primary brand color (blue) */
+  --primary-foreground: hsl(211, 100%, 99%);
+  /* Primary button text */
+  --secondary: hsl(60, 4.8%, 95.9%);
+  /* Secondary button background */
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  /* Secondary button text */
+  --accent: hsl(60, 4.8%, 95.9%);
+  /* Accent color */
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  /* Accent text */
+  --destructive: hsl(0, 84.2%, 60.2%);
+  /* Error/destructive actions */
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  /* Error text */
+  --ring: hsl(20, 14.3%, 4.1%);
+  /* Focus ring color */
+  --radius: 0.5rem;
+  /* Default border radius */
+
   /* EDGERACK Industrial Theme Variables */
-  --edgerack-dark: hsl(215, 28%, 17%);        /* Primary dark background */
-  --edgerack-darker: hsl(215, 25%, 12%);      /* Darker variant for depth */
-  --edgerack-blue: hsl(217, 91%, 60%);        /* Brand blue for highlights */
-  --edgerack-green: hsl(142, 76%, 36%);       /* Success/operational green */
-  --edgerack-slate: hsl(215, 20%, 65%);       /* Muted text color */
+  --edgerack-dark: hsl(250, 28%, 17%);
+  /* Primary dark background */
+  --edgerack-darker: hsl(244, 25%, 12%);
+  /* Darker variant for depth */
+  --edgerack-blue: hsl(217, 91%, 60%);
+  /* Brand blue for highlights */
+  --edgerack-green: hsl(142, 76%, 36%);
+  /* Success/operational green */
+  --edgerack-slate: hsl(215, 20%, 65%);
+  /* Muted text color */
+
+  /* ===== COMPREHENSIVE COLOR SELECTOR PALETTE ===== */
+  
+  /* Primary Color Variants - Blue Spectrum */
+  --color-primary-50: hsl(217, 91%, 95%);     /* Ultra light blue */
+  --color-primary-100: hsl(217, 91%, 90%);    /* Very light blue */
+  --color-primary-200: hsl(217, 91%, 80%);    /* Light blue */
+  --color-primary-300: hsl(217, 91%, 70%);    /* Medium light blue */
+  --color-primary-400: hsl(217, 91%, 60%);    /* Default blue */
+  --color-primary-500: hsl(217, 91%, 50%);    /* Medium blue */
+  --color-primary-600: hsl(217, 91%, 40%);    /* Dark blue */
+  --color-primary-700: hsl(217, 91%, 30%);    /* Very dark blue */
+  --color-primary-800: hsl(217, 91%, 20%);    /* Ultra dark blue */
+  --color-primary-900: hsl(217, 91%, 10%);    /* Deepest blue */
+
+  /* Secondary Color Variants - Green Spectrum */
+  --color-secondary-50: hsl(142, 76%, 95%);   /* Ultra light green */
+  --color-secondary-100: hsl(142, 76%, 88%);  /* Very light green */
+  --color-secondary-200: hsl(142, 76%, 78%);  /* Light green */
+  --color-secondary-300: hsl(142, 76%, 56%);  /* Medium light green */
+  --color-secondary-400: hsl(142, 76%, 46%);  /* Medium green */
+  --color-secondary-500: hsl(142, 76%, 36%);  /* Default green */
+  --color-secondary-600: hsl(142, 76%, 26%);  /* Dark green */
+  --color-secondary-700: hsl(142, 76%, 18%);  /* Very dark green */
+  --color-secondary-800: hsl(142, 76%, 12%);  /* Ultra dark green */
+  --color-secondary-900: hsl(142, 76%, 8%);   /* Deepest green */
+
+  /* Neutral Gray Variants */
+  --color-neutral-50: hsl(215, 20%, 95%);     /* Ultra light gray */
+  --color-neutral-100: hsl(215, 20%, 88%);    /* Very light gray */
+  --color-neutral-200: hsl(215, 20%, 78%);    /* Light gray */
+  --color-neutral-300: hsl(215, 20%, 68%);    /* Medium light gray */
+  --color-neutral-400: hsl(215, 20%, 58%);    /* Medium gray */
+  --color-neutral-500: hsl(215, 20%, 48%);    /* Default gray */
+  --color-neutral-600: hsl(215, 20%, 38%);    /* Dark gray */
+  --color-neutral-700: hsl(215, 20%, 28%);    /* Very dark gray */
+  --color-neutral-800: hsl(215, 20%, 18%);    /* Ultra dark gray */
+  --color-neutral-900: hsl(215, 20%, 10%);    /* Deepest gray */
+
+  /* Warning Colors - Orange/Amber Spectrum */
+  --color-warning-50: hsl(45, 93%, 95%);      /* Ultra light amber */
+  --color-warning-100: hsl(45, 93%, 88%);     /* Very light amber */
+  --color-warning-200: hsl(45, 93%, 78%);     /* Light amber */
+  --color-warning-300: hsl(45, 93%, 68%);     /* Medium light amber */
+  --color-warning-400: hsl(45, 93%, 58%);     /* Medium amber */
+  --color-warning-500: hsl(45, 93%, 48%);     /* Default amber */
+  --color-warning-600: hsl(45, 93%, 38%);     /* Dark amber */
+  --color-warning-700: hsl(45, 93%, 28%);     /* Very dark amber */
+  --color-warning-800: hsl(45, 93%, 18%);     /* Ultra dark amber */
+  --color-warning-900: hsl(45, 93%, 10%);     /* Deepest amber */
+
+  /* Error/Danger Colors - Red Spectrum */
+  --color-error-50: hsl(0, 84%, 95%);         /* Ultra light red */
+  --color-error-100: hsl(0, 84%, 88%);        /* Very light red */
+  --color-error-200: hsl(0, 84%, 78%);        /* Light red */
+  --color-error-300: hsl(0, 84%, 68%);        /* Medium light red */
+  --color-error-400: hsl(0, 84%, 60%);        /* Medium red */
+  --color-error-500: hsl(0, 84%, 50%);        /* Default red */
+  --color-error-600: hsl(0, 84%, 40%);        /* Dark red */
+  --color-error-700: hsl(0, 84%, 30%);        /* Very dark red */
+  --color-error-800: hsl(0, 84%, 20%);        /* Ultra dark red */
+  --color-error-900: hsl(0, 84%, 12%);        /* Deepest red */
+
+  /* Info Colors - Cyan Spectrum */
+  --color-info-50: hsl(195, 100%, 95%);       /* Ultra light cyan */
+  --color-info-100: hsl(195, 100%, 88%);      /* Very light cyan */
+  --color-info-200: hsl(195, 100%, 78%);      /* Light cyan */
+  --color-info-300: hsl(195, 100%, 68%);      /* Medium light cyan */
+  --color-info-400: hsl(195, 100%, 58%);      /* Medium cyan */
+  --color-info-500: hsl(195, 100%, 48%);      /* Default cyan */
+  --color-info-600: hsl(195, 100%, 38%);      /* Dark cyan */
+  --color-info-700: hsl(195, 100%, 28%);      /* Very dark cyan */
+  --color-info-800: hsl(195, 100%, 18%);      /* Ultra dark cyan */
+  --color-info-900: hsl(195, 100%, 10%);      /* Deepest cyan */
+
+  /* Status Indicator Colors */
+  --color-online: hsl(142, 76%, 36%);         /* Online/operational status */
+  --color-offline: hsl(0, 84%, 50%);          /* Offline/error status */
+  --color-warning-status: hsl(45, 93%, 58%);  /* Warning status */
+  --color-maintenance: hsl(45, 93%, 68%);     /* Maintenance mode */
+  --color-inactive: hsl(215, 20%, 48%);       /* Inactive/disabled */
+
+  /* Industrial Theme Background Colors */
+  --bg-primary: hsl(215, 28%, 17%);           /* Primary dark background */
+  --bg-secondary: hsl(215, 25%, 12%);         /* Secondary darker background */
+  --bg-tertiary: hsl(215, 22%, 8%);          /* Tertiary darkest background */
+  --bg-surface: hsl(215, 25%, 20%);          /* Surface/card background */
+  --bg-overlay: hsla(215, 25%, 12%, 0.9);    /* Modal/overlay background */
+
+  /* Industrial Text Colors */
+  --text-primary: hsl(0, 0%, 95%);            /* Primary white text */
+  --text-secondary: hsl(215, 20%, 75%);       /* Secondary muted text */
+  --text-tertiary: hsl(215, 20%, 55%);       /* Tertiary dimmed text */
+  --text-disabled: hsl(215, 20%, 35%);       /* Disabled text */
+  --text-inverse: hsl(215, 28%, 17%);        /* Dark text on light backgrounds */
 }
 
 .dark {
-  --background: hsl(215, 28%, 17%);
+  --background: hsl(245, 55%, 4%);
   --foreground: hsl(0, 0%, 98%);
-  --muted: hsl(215, 25%, 12%);
-  --muted-foreground: hsl(215, 20%, 65%);
-  --popover: hsl(215, 28%, 17%);
+  --muted: hsl(246, 46%, 8%);
+  --muted-foreground: hsl(250, 20%, 65%);
+  --popover: hsl(264, 27%, 20%);
   --popover-foreground: hsl(0, 0%, 98%);
-  --card: hsl(215, 28%, 17%);
+  --card: hsl(263, 28%, 17%);
   --card-foreground: hsl(0, 0%, 98%);
-  --border: hsl(215, 25%, 12%);
-  --input: hsl(215, 25%, 12%);
+  --border: hsl(244, 25%, 12%);
+  --input: hsl(252, 25%, 12%);
   --primary: hsl(217, 91%, 60%);
   --primary-foreground: hsl(0, 0%, 98%);
-  --secondary: hsl(215, 25%, 12%);
+  --secondary: hsl(240, 25%, 12%);
   --secondary-foreground: hsl(0, 0%, 98%);
-  --accent: hsl(215, 25%, 12%);
+  --accent: hsl(264, 25%, 12%);
   --accent-foreground: hsl(0, 0%, 98%);
   --destructive: hsl(0, 62.8%, 30.6%);
   --destructive-foreground: hsl(0, 0%, 98%);
@@ -82,93 +205,134 @@
   body {
     @apply antialiased bg-background text-foreground;
     font-family: 'Lato', sans-serif;
-    font-weight: 400; /* Normal weight for body text */
+    font-weight: 400;
+    /* Normal weight for body text */
   }
 }
 
 /* Lato Font Weight Rules */
 /* Normal weight for body text and general content */
-body, p, span, div, td, li, .text-gray-300, .text-gray-400, .text-white {
+body,
+p,
+span,
+div,
+td,
+li,
+.text-gray-300,
+.text-gray-400,
+.text-white {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
 /* Semi-bold weight for titles and headers */
-h1, h2, h3, h4, h5, h6, .font-semibold, .font-bold {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-semibold,
+.font-bold {
   font-family: 'Lato', sans-serif;
   font-weight: 600 !important;
 }
 
 /* Specific weight overrides for different elements */
-.navbar-brand, .text-xl, .text-2xl {
+.navbar-brand,
+.text-xl,
+.text-2xl {
   font-family: 'Lato', sans-serif;
   font-weight: 600 !important;
 }
 
 /* Normal weight for labels and secondary text */
-.text-sm, .text-xs, label, .label {
+.text-sm,
+.text-xs,
+label,
+.label {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
 /* Normal weight for buttons and interactive elements */
-button, .btn, .button {
+button,
+.btn,
+.button {
   font-family: 'Lato', sans-serif;
   font-weight: 400 !important;
 }
 
 /* Keep monospace fonts for technical data */
-.edgerack-monospace, .font-mono, code, pre {
+.edgerack-monospace,
+.font-mono,
+code,
+pre {
   font-family: 'Courier New', monospace !important;
   font-weight: 400;
 }
 
 /* Status badges with normal weight */
-.status-badge, .status-badge-on, .status-badge-off, .status-badge-blue, .status-badge-purple, .status-badge-yellow {
+.status-badge,
+.status-badge-on,
+.status-badge-off,
+.status-badge-blue,
+.status-badge-purple,
+.status-badge-yellow {
   font-family: 'Lato', sans-serif;
   font-weight: 400 !important;
 }
 
 /* Table headers with normal weight */
-th, .table-label {
+th,
+.table-label {
   font-family: 'Lato', sans-serif;
   font-weight: 400 !important;
 }
 
 /* Card titles and content */
-.card-title, .CardTitle {
+.card-title,
+.CardTitle {
   font-family: 'Lato', sans-serif;
   font-weight: 600 !important;
 }
 
-.card-description, .CardDescription {
+.card-description,
+.CardDescription {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
 /* Navigation elements */
-nav a, .nav-link {
+nav a,
+.nav-link {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
-nav a:hover, .nav-link:hover, .router-link-active {
+nav a:hover,
+.nav-link:hover,
+.router-link-active {
   font-weight: 600 !important;
 }
 
 /* Form elements */
-input, textarea, select {
+input,
+textarea,
+select {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
 /* Alert and notification text */
-.alert, .Alert {
+.alert,
+.Alert {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
-.alert-title, .AlertTitle {
+.alert-title,
+.AlertTitle {
   font-family: 'Lato', sans-serif;
   font-weight: 600 !important;
 }
@@ -287,7 +451,7 @@ input, textarea, select {
   text-transform: uppercase;
   font-size: 0.875rem;
   font-weight: 500;
-  color: hsl(215, 20%, 75%);
+  color: hsl(264, 20%, 75%);
   letter-spacing: 0.05em;
 }
 
@@ -302,7 +466,7 @@ input, textarea, select {
 }
 
 .status-badge.off {
-  background: hsl(215, 20%, 40%);
+  background: hsl(249, 20%, 40%);
   color: hsl(0, 0%, 90%);
 }
 
@@ -355,9 +519,9 @@ input, textarea, select {
 
 /* Enhanced card styling */
 .edgerack-card {
-  background: linear-gradient(135deg, hsl(215, 28%, 17%) 0%, hsl(215, 25%, 15%) 100%);
-  border: 1px solid hsl(215, 25%, 25%);
-  box-shadow: 0 8px 32px hsl(215, 28%, 5%, 0.3);
+  background: linear-gradient(135deg, hsl(258, 28%, 17%) 0%, hsl(253, 25%, 15%) 100%);
+  border: 1px solid hsl(276, 25%, 25%);
+  box-shadow: 0 8px 32px hsl(263, 27%, 6%, 0.3);
 }
 
 /* Status indicator animations */
@@ -379,9 +543,12 @@ input, textarea, select {
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.3;
   }
+
   50% {
     opacity: 0.6;
   }
@@ -389,13 +556,13 @@ input, textarea, select {
 
 /* Enhanced table styling */
 .edgerack-table {
-  background: hsl(215, 28%, 17%);
-  border: 1px solid hsl(215, 25%, 25%);
+  background: hsl(268, 28%, 17%);
+  border: 1px solid hsl(255, 25%, 25%);
 }
 
 .edgerack-table th {
-  background: hsl(215, 25%, 12%);
-  color: hsl(215, 20%, 75%);
+  background: hsl(280, 25%, 12%);
+  color: hsl(252, 20%, 75%);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -403,16 +570,16 @@ input, textarea, select {
 
 .edgerack-table td {
   color: hsl(0, 0%, 90%);
-  border-color: hsl(215, 25%, 25%);
+  border-color: hsl(261, 25%, 25%);
 }
 
 .edgerack-table tr:hover {
-  background: hsl(215, 25%, 20%);
+  background: hsl(252, 25%, 20%);
 }
 
 /* Loading skeleton */
 .skeleton {
-  background: linear-gradient(90deg, hsl(215, 25%, 20%) 25%, hsl(215, 25%, 25%) 50%, hsl(215, 25%, 20%) 75%);
+  background: linear-gradient(90deg, hsl(261, 25%, 20%) 25%, hsl(264, 25%, 25%) 50%, hsl(245, 25%, 20%) 75%);
   background-size: 200% 100%;
   animation: loading 1.5s infinite;
 }
@@ -421,6 +588,7 @@ input, textarea, select {
   0% {
     background-position: 200% 0;
   }
+
   100% {
     background-position: -200% 0;
   }

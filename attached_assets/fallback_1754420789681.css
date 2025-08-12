@@ -350,7 +350,7 @@ video {
 }
 
 .dark [role=tooltip]>[data-popper-arrow]:after {
-  border-color: #4b5563;
+  border-color: #5a4b63;
   border-style: solid
 }
 

@@ -1,9 +1,17 @@
+/**
+ * EDGERACK Vue Client - Comprehensive Color Selector System
+ * 
+ * Complete industrial-grade color palette with extensive customization
+ * options for Vue.js components and professional monitoring interfaces.
+ */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* EDGERACK Industrial Theme Variables */
+/* EDGERACK Industrial Theme Variables with Comprehensive Color Selectors */
 :root {
+  /* Base Vue Color Palette */
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
   --vt-c-white-mute: #f2f2f2;
@@ -12,11 +20,101 @@
   --vt-c-black-mute: #282828;
   --vt-c-indigo: #2c3e50;
   
+  /* Semantic Color Mapping */
   --color-background: var(--vt-c-black);
   --color-background-soft: var(--vt-c-black-soft);
   --color-background-mute: var(--vt-c-black-mute);
   --color-text: var(--vt-c-white);
   --color-heading: var(--vt-c-white);
+
+  /* ===== COMPREHENSIVE COLOR SELECTOR EXTENSIONS ===== */
+  
+  /* Vue Industrial Blue Spectrum */
+  --vue-blue-ultra-light: hsl(214, 95%, 97%);    /* Ultra light blue */
+  --vue-blue-very-light: hsl(214, 95%, 92%);     /* Very light blue */
+  --vue-blue-light: hsl(214, 95%, 82%);          /* Light blue */
+  --vue-blue-medium-light: hsl(214, 95%, 72%);   /* Medium light blue */
+  --vue-blue-medium: hsl(214, 95%, 62%);         /* Medium blue */
+  --vue-blue-default: hsl(214, 95%, 52%);        /* Default blue */
+  --vue-blue-dark: hsl(214, 95%, 42%);           /* Dark blue */
+  --vue-blue-very-dark: hsl(214, 95%, 32%);      /* Very dark blue */
+  --vue-blue-ultra-dark: hsl(214, 95%, 22%);     /* Ultra dark blue */
+  --vue-blue-deepest: hsl(214, 95%, 12%);        /* Deepest blue */
+
+  /* Vue Industrial Green Spectrum */
+  --vue-green-ultra-light: hsl(140, 80%, 95%);   /* Ultra light green */
+  --vue-green-very-light: hsl(140, 80%, 87%);    /* Very light green */
+  --vue-green-light: hsl(140, 80%, 77%);         /* Light green */
+  --vue-green-medium-light: hsl(140, 80%, 65%);  /* Medium light green */
+  --vue-green-medium: hsl(140, 80%, 55%);        /* Medium green */
+  --vue-green-default: hsl(140, 80%, 45%);       /* Default green */
+  --vue-green-dark: hsl(140, 80%, 35%);          /* Dark green */
+  --vue-green-very-dark: hsl(140, 80%, 25%);     /* Very dark green */
+  --vue-green-ultra-dark: hsl(140, 80%, 17%);    /* Ultra dark green */
+  --vue-green-deepest: hsl(140, 80%, 11%);       /* Deepest green */
+
+  /* Vue Industrial Orange/Amber Spectrum */
+  --vue-amber-ultra-light: hsl(43, 96%, 95%);    /* Ultra light amber */
+  --vue-amber-very-light: hsl(43, 96%, 87%);     /* Very light amber */
+  --vue-amber-light: hsl(43, 96%, 77%);          /* Light amber */
+  --vue-amber-medium-light: hsl(43, 96%, 67%);   /* Medium light amber */
+  --vue-amber-medium: hsl(43, 96%, 57%);         /* Medium amber */
+  --vue-amber-default: hsl(43, 96%, 47%);        /* Default amber */
+  --vue-amber-dark: hsl(43, 96%, 37%);           /* Dark amber */
+  --vue-amber-very-dark: hsl(43, 96%, 27%);      /* Very dark amber */
+  --vue-amber-ultra-dark: hsl(43, 96%, 17%);     /* Ultra dark amber */
+  --vue-amber-deepest: hsl(43, 96%, 9%);         /* Deepest amber */
+
+  /* Vue Industrial Red Spectrum */
+  --vue-red-ultra-light: hsl(0, 90%, 95%);       /* Ultra light red */
+  --vue-red-very-light: hsl(0, 90%, 87%);        /* Very light red */
+  --vue-red-light: hsl(0, 90%, 77%);             /* Light red */
+  --vue-red-medium-light: hsl(0, 90%, 67%);      /* Medium light red */
+  --vue-red-medium: hsl(0, 90%, 57%);            /* Medium red */
+  --vue-red-default: hsl(0, 90%, 47%);           /* Default red */
+  --vue-red-dark: hsl(0, 90%, 37%);              /* Dark red */
+  --vue-red-very-dark: hsl(0, 90%, 27%);         /* Very dark red */
+  --vue-red-ultra-dark: hsl(0, 90%, 17%);        /* Ultra dark red */
+  --vue-red-deepest: hsl(0, 90%, 9%);            /* Deepest red */
+
+  /* Vue Industrial Purple Spectrum */
+  --vue-purple-ultra-light: hsl(262, 85%, 95%);  /* Ultra light purple */
+  --vue-purple-very-light: hsl(262, 85%, 87%);   /* Very light purple */
+  --vue-purple-light: hsl(262, 85%, 77%);        /* Light purple */
+  --vue-purple-medium-light: hsl(262, 85%, 67%); /* Medium light purple */
+  --vue-purple-medium: hsl(262, 85%, 57%);       /* Medium purple */
+  --vue-purple-default: hsl(262, 85%, 47%);      /* Default purple */
+  --vue-purple-dark: hsl(262, 85%, 37%);         /* Dark purple */
+  --vue-purple-very-dark: hsl(262, 85%, 27%);    /* Very dark purple */
+  --vue-purple-ultra-dark: hsl(262, 85%, 17%);   /* Ultra dark purple */
+  --vue-purple-deepest: hsl(262, 85%, 9%);       /* Deepest purple */
+
+  /* Status Badge Color Customization */
+  --badge-success-bg: var(--vue-green-default);  /* Success badge background */
+  --badge-success-text: #ffffff;                 /* Success badge text */
+  --badge-warning-bg: var(--vue-amber-default);  /* Warning badge background */
+  --badge-warning-text: #000000;                 /* Warning badge text */
+  --badge-error-bg: var(--vue-red-default);      /* Error badge background */
+  --badge-error-text: #ffffff;                   /* Error badge text */
+  --badge-info-bg: var(--vue-blue-default);      /* Info badge background */
+  --badge-info-text: #ffffff;                    /* Info badge text */
+  --badge-neutral-bg: hsl(215, 20%, 48%);        /* Neutral badge background */
+  --badge-neutral-text: #ffffff;                 /* Neutral badge text */
+
+  /* Table Customization Colors */
+  --table-header-bg: hsl(215, 25%, 15%);         /* Table header background */
+  --table-header-text: hsl(215, 20%, 75%);       /* Table header text */
+  --table-row-odd: hsl(215, 25%, 12%);           /* Odd table row background */
+  --table-row-even: hsl(215, 25%, 8%);           /* Even table row background */
+  --table-border: hsl(215, 25%, 20%);            /* Table border color */
+  --table-cell-text: #ffffff;                    /* Table cell text color */
+
+  /* Interface Enhancement Colors */
+  --interface-primary: var(--vue-blue-default);   /* Primary interface color */
+  --interface-secondary: var(--vue-green-default); /* Secondary interface color */
+  --interface-accent: var(--vue-purple-default);  /* Accent interface color */
+  --interface-muted: hsl(215, 20%, 55%);         /* Muted interface color */
+  --interface-disabled: hsl(215, 20%, 35%);      /* Disabled interface color */
 }
 
 @layer components {
