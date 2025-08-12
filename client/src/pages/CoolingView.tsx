@@ -53,12 +53,12 @@ interface CoolingUnitData {
 }
 
 export default function CoolingView() {
-  const [showStates, setShowStates] = useState(false);
-  const [showControl, setShowControl] = useState(false);
-  const [showTempsHumidity, setShowTempsHumidity] = useState(false);
-  const [showFansMotors, setShowFansMotors] = useState(false);
-  const [showOtherMetrics, setShowOtherMetrics] = useState(false);
-  const [showAlarmLogs, setShowAlarmLogs] = useState(false);
+  const [showStates, setShowStates] = useState(true);
+  const [showControl, setShowControl] = useState(true);
+  const [showTempsHumidity, setShowTempsHumidity] = useState(true);
+  const [showFansMotors, setShowFansMotors] = useState(true);
+  const [showOtherMetrics, setShowOtherMetrics] = useState(true);
+  const [showAlarmLogs, setShowAlarmLogs] = useState(true);
   const [triggerExpandAll, setTriggerExpandAll] = useState(false);
 
   const { data: coolingData, isLoading } = useQuery<CoolingUnitData>({
