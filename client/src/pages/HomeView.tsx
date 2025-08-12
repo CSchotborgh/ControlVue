@@ -234,7 +234,7 @@ export default function HomeView() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td className="font-medium">2025-08-05 12:20:53</td>
+                        <td className="font-medium bg-[#060511]">2025-08-05 12:20:53</td>
                         <td>Display</td>
                         <td>Display</td>
                         <td><Badge className="status-badge-blue">State</Badge></td>
