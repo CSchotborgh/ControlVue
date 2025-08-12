@@ -359,7 +359,7 @@ export default function ConfigView() {
         </div>
         
         {showAdminControls && (
-          <div className="cooling-content">
+          <div className="cooling-content bg-[#070613]">
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <div>
