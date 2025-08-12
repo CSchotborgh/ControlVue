@@ -80,7 +80,7 @@ export default function AdminView() {
                 Configure basic system settings and parameters
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4 bg-[#0c0c1c]">
+            <CardContent className="p-6 pt-0 space-y-4 bg-[#0c0c1c]">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="unitName" className="text-white">Unit Name</Label>
