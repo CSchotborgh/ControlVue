@@ -137,7 +137,7 @@ export default function HomeView() {
         </div>
       )}
       {/* Cabinet Signals Section */}
-      <div className="max-h-fit my-6 grid grid-rows-1 border rounded-3xl bg-slate-800">
+      <div className="max-h-fit my-6 grid grid-rows-1 border rounded-3xl bg-[#060511]">
         <div className="my-6 mx-2">
           <div className="container flex flex-row">
             <div className="flex items-start text-2xl">Cabinet</div>
