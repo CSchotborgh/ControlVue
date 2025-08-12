@@ -170,7 +170,7 @@ export default function ConfigView() {
         </div>
         
         {showNetworkSettings && (
-          <div className="cooling-content">
+          <div className="cooling-content bg-[#090816]">
             <div className="space-y-8">
               
               {/* Real-Time Network */}
