@@ -43,7 +43,7 @@ interface CoolingUnitData {
 }
 
 export default function HomeView() {
-  const [showInternalGrid, setShowInternalGrid] = useState(false);
+  const [showInternalGrid, setShowInternalGrid] = useState(true);
   const [showCabinetSignals, setShowCabinetSignals] = useState(true);
   const [loggedIn, setLoggedIn] = useState(false);
   const [machineActive, setMachineActive] = useState(true);
