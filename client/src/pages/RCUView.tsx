@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 interface CoolingUnitData {
   machineState: boolean;
@@ -85,17 +86,19 @@ export default function RCUView() {
 
   return (
     <main className="container mx-auto px-4 py-8 text-white">
-      {/* Header and Expansion/Collapse Control */}
-      <div className="flex flex-row">
-        <div className="flex flex-1 justify-start">
-          <h1 className="mt-6">Cooling Unit Readings:</h1>
-        </div>
-        <div className="flex justify-end mt-6">
-          <button onClick={toggleExpansion}>
-            <div>{triggerExpandAll ? '[ Collapse All ]' : '[ Expand All ]'}</div>
-          </button>
-        </div>
+      {/* Expand All Button */}
+      <div className="flex justify-end mb-4">
+        <Button
+          onClick={toggleExpansion}
+          variant="outline"
+          className="border-gray-600 text-white hover:bg-gray-700"
+        >
+          {triggerExpandAll ? 'Collapse All' : 'Expand All'}
+        </Button>
       </div>
+      
+      {/* Header */}
+      <h1 className="text-2xl font-semibold mb-6">Cooling Unit Readings:</h1>
       
       {/* Last updated section */}
       <div className="flex justify-center uppercase text-xs italic mt-2">

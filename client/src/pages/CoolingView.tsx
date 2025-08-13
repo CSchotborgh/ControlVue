@@ -130,12 +130,13 @@ export default function CoolingView() {
           <h1 className="text-2xl font-semibold">Cooling Unit Readings:</h1>
         </div>
         <div className="flex justify-end">
-          <button 
+          <Button
             onClick={toggleExpansion}
-            className="text-lg text-blue-400 hover:text-blue-300 transition-colors"
+            variant="outline"
+            className="border-gray-600 text-white hover:bg-gray-700"
           >
-            {triggerExpandAll ? '[ Collapse All ]' : '[ Expand All ]'}
-          </button>
+            {triggerExpandAll ? 'Collapse All' : 'Expand All'}
+          </Button>
         </div>
       </div>
       {/* Status and Last Updated */}

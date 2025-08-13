@@ -29,6 +29,16 @@ export default function ConfigView() {
   const [showGeneralSettings, setShowGeneralSettings] = useState(false);
   const [showNetworkSettings, setShowNetworkSettings] = useState(false);
   const [showAdminControls, setShowAdminControls] = useState(false);
+  const [expandAll, setExpandAll] = useState(false);
+
+  // Toggle function for expand/collapse all sections
+  const toggleExpandAll = () => {
+    const newExpandState = !expandAll;
+    setExpandAll(newExpandState);
+    setShowGeneralSettings(newExpandState);
+    setShowNetworkSettings(newExpandState);
+    setShowAdminControls(newExpandState);
+  };
 
   // Real configuration data from the EDGERACK system at 192.168.222.184
   const configData = {
@@ -84,6 +94,17 @@ export default function ConfigView() {
 
   return (
     <main className="container mx-auto px-4 py-8 text-white">
+      {/* Expand All Button */}
+      <div className="flex justify-end mb-4">
+        <Button
+          onClick={toggleExpandAll}
+          variant="outline"
+          className="border-gray-600 text-white hover:bg-gray-700"
+        >
+          {expandAll ? 'Collapse All' : 'Expand All'}
+        </Button>
+      </div>
+      
       <h1 className="text-2xl font-semibold mb-8">Configuration:</h1>
       {/* General Settings Section */}
       <div className="cooling-section">
