@@ -354,7 +354,7 @@ export default function UpgradeView() {
         <CardHeader>
           <CardTitle className="text-white">Software Package Upgrading:</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-6 bg-[#090917]">
           {/* File Upload Section */}
           <div className="space-y-4">
             <div className="flex items-center gap-4">
