@@ -319,7 +319,7 @@ export default function UpgradeView() {
             Previous firmware versions and installation history
           </CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="bg-[#0a0a18]">
           <div className="relative overflow-x-auto">
             <table className="edgerack-table">
               <thead>
