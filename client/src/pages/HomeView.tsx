@@ -162,7 +162,7 @@ export default function HomeView() {
       <div className="max-h-fit my-6 grid grid-rows-1 border rounded-lg bg-[#060511] mt-[2px] mb-[2px] shadow-lg">
         <div className="my-6 mx-2">
           <div className="container flex flex-row">
-            <div className="flex items-start text-2xl">Cabinet</div>
+            <div className="flex items-start text-xl font-semibold pl-4">Cabinet</div>
             <div className="flex gap-3 flex-1 justify-end">
               <button onClick={() => setShowCabinetSignals(!showCabinetSignals)}>
                 <div className="text-2xl">
@@ -323,7 +323,7 @@ export default function HomeView() {
       <div className="max-h-fit my-6 grid grid-rows-1 border rounded-lg bg-[#060511] shadow-lg">
         <div className="my-6 mx-2">
           <div className="container flex flex-row">
-            <div className="flex items-start text-2xl">Cooling Unit</div>
+            <div className="flex items-start text-xl font-semibold pl-4">Cooling Unit</div>
             <div className="flex gap-3 flex-1 justify-end">
               <button onClick={() => setShowInternalGrid(!showInternalGrid)}>
                 <div className="text-2xl">
@@ -476,7 +476,7 @@ export default function HomeView() {
       <div className="max-h-fit my-6 grid grid-rows-1 border rounded-lg bg-[#060511] shadow-lg">
         <div className="my-6 mx-2">
           <div className="container flex flex-row">
-            <div className="flex items-start text-2xl">Networking</div>
+            <div className="flex items-start text-xl font-semibold pl-4">Networking</div>
             <div className="flex gap-3 flex-1 justify-end">
               <button onClick={() => setShowNetworking(!showNetworking)}>
                 <div className="text-2xl">
@@ -559,7 +559,7 @@ export default function HomeView() {
       <div className="max-h-fit my-6 grid grid-rows-1 border rounded-lg bg-[#060511] shadow-lg">
         <div className="my-6 mx-2">
           <div className="container flex flex-row">
-            <div className="flex items-start text-2xl">System</div>
+            <div className="flex items-start text-xl font-semibold pl-4">System</div>
             <div className="flex gap-3 flex-1 justify-end">
               <button onClick={() => setShowSystem(!showSystem)}>
                 <div className="text-2xl">
