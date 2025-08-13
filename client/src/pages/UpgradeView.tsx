@@ -130,12 +130,10 @@ export default function UpgradeView() {
   return (
     <main className="container mx-auto px-4 py-8 text-white">
       <h1 className="text-2xl font-bold mb-8">EDGERACK™ System Updates</h1>
-      
       {/* Last updated section */}
       <div className="flex justify-center uppercase text-xs italic mb-6">
         Last updated: <div>&nbsp; {lastUpdated}</div>
       </div>
-
       {/* Current System Status */}
       <Card className="bg-slate-800 border-slate-700 mb-6">
         <CardHeader>
@@ -161,7 +159,6 @@ export default function UpgradeView() {
           </div>
         </CardContent>
       </Card>
-
       {/* Available Updates */}
       <Card className="bg-slate-800 border-slate-700 mb-6">
         <CardHeader>
@@ -242,7 +239,6 @@ export default function UpgradeView() {
           </div>
         </CardContent>
       </Card>
-
       {/* Release Notes */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <Card className="bg-slate-800 border-slate-700">
@@ -252,7 +248,7 @@ export default function UpgradeView() {
               Released: {releaseNotes.releaseDate}
             </CardDescription>
           </CardHeader>
-          <CardContent className="p-6 pt-0 space-y-4 bg-[#0b0b1a]">
+          <CardContent className="p-6 pt-0 space-y-4 bg-[#1e293b]">
             <div>
               <h4 className="font-semibold text-white mb-2">New Features & Improvements</h4>
               <ul className="space-y-1 text-sm text-gray-300">
@@ -310,7 +306,6 @@ export default function UpgradeView() {
           </CardContent>
         </Card>
       </div>
-
       {/* Update History */}
       <Card className="bg-slate-800 border-slate-700 mb-6">
         <CardHeader>
@@ -348,7 +343,6 @@ export default function UpgradeView() {
           </div>
         </CardContent>
       </Card>
-
       {/* Software Package Upgrading */}
       <Card className="bg-slate-800 border-slate-700">
         <CardHeader>
