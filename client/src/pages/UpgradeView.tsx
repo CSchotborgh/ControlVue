@@ -144,7 +144,7 @@ export default function UpgradeView() {
             Current System Status
           </CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="bg-[#0b0b1b]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="space-y-2">
               <div className="text-sm text-gray-400">Current Version</div>
