@@ -144,7 +144,7 @@ export default function UpgradeView() {
             Current System Status
           </CardTitle>
         </CardHeader>
-        <CardContent className="bg-[#0b0b1b]">
+        <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="space-y-2">
               <div className="text-sm text-gray-400">Current Version</div>
@@ -319,7 +319,7 @@ export default function UpgradeView() {
             Previous firmware versions and installation history
           </CardDescription>
         </CardHeader>
-        <CardContent className="bg-[#0a0a18]">
+        <CardContent>
           <div className="relative overflow-x-auto">
             <table className="edgerack-table">
               <thead>
@@ -354,7 +354,7 @@ export default function UpgradeView() {
         <CardHeader>
           <CardTitle className="text-white">Software Package Upgrading:</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6 bg-[#090917]">
+        <CardContent className="space-y-6">
           {/* File Upload Section */}
           <div className="space-y-4">
             <div className="flex items-center gap-4">
