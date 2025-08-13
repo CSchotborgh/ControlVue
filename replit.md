@@ -2,7 +2,14 @@
 
 This is a real-time cooling unit monitoring and control system built with a React frontend and Express backend. The application provides an industrial dashboard interface for monitoring cooling unit data, equipment states, and environmental parameters. It features real-time data updates, user authentication, and a responsive design optimized for industrial use.
 
-**Latest Update (2025-08-12)**: Successfully implemented Replit-style dark UI aesthetic across the entire EDGERACK cooling unit control system and cleaned up unused assets. Implemented:
+**Latest Update (2025-08-13)**: Enhanced responsive design and navigation consistency across the entire EDGERACK cooling unit control system. Implemented:
+
+- **Consistent Expand All Button Design**: Standardized "Expand All"/"Collapse All" buttons across all pages using shadcn/ui Button component with outline variant and consistent styling
+- **Responsive Navigation Enhancement**: Updated navigation bar to span full width (`w-full`) instead of constrained width (`max-w-7xl`) for better responsive behavior across all screen sizes
+- **Cross-Page Button Consistency**: Updated CoolingView, ConfigView, and RCUView to use matching button design with HomeView for unified user experience
+- **Enhanced UX**: All expandable sections now default to expanded state on dedicated /cooling page for immediate data access
+
+Previous Update (2025-08-12): Successfully implemented Replit-style dark UI aesthetic across the entire EDGERACK cooling unit control system and cleaned up unused assets. Implemented:
 
 - **Replit Dark Theme Implementation**: Applied Replit's signature dark UI colors - deep dark background (hsl(222, 28%, 8%)), card surfaces (hsl(217, 33%, 17%)), and signature blue accent (hsl(217, 91%, 59%))
 - **Enhanced Color Consistency**: Updated primary colors, accent colors, and status indicators to match Replit's design system
