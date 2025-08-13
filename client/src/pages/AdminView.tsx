@@ -135,7 +135,7 @@ export default function AdminView() {
                 Manage user accounts and permissions
               </CardDescription>
             </CardHeader>
-            <CardContent className="rounded-b-lg">
+            <CardContent className="p-6 pt-0 rounded-b-lg bg-[#0a0a19]">
               <div className="relative overflow-x-auto">
                 <table className="edgerack-table">
                   <thead>
