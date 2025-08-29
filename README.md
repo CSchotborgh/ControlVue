@@ -532,23 +532,415 @@ sequenceDiagram
 - **Maintenance**: Technical access and system diagnostics
 - **Viewer**: Read-only monitoring access
 
-## 📱 Page-by-Page Guide
+## 📱 Complete UI Elements & Controls Guide
+
+### 🎛️ **Interactive Elements Workflow**
+
+```mermaid
+flowchart TD
+    A[User Interface Elements] --> B{Element Type}
+    
+    B -->|Navigation| C[Navigation Bar]
+    B -->|Control| D[Interactive Controls]
+    B -->|Data Display| E[Information Panels]
+    B -->|Form Elements| F[Input Components]
+    
+    C --> C1[Logo/Brand]
+    C --> C2[Navigation Links]
+    C --> C3[Login Button]
+    C --> C4[Mobile Menu Toggle]
+    
+    D --> D1[Expand/Collapse Buttons]
+    D --> D2[Toggle Switches]
+    D --> D3[Action Buttons]
+    D --> D4[Dropdown Selectors]
+    
+    E --> E1[Status Badges]
+    E --> E2[Real-time Metrics]
+    E --> E3[Alert Indicators]
+    E --> E4[Progress Displays]
+    
+    F --> F1[Text Inputs]
+    F --> F2[Selection Lists]
+    F --> F3[File Uploads]
+    F --> F4[Form Validation]
+    
+    style A fill:#2563eb,color:#ffffff
+    style D fill:#059669,color:#ffffff
+    style E fill:#dc2626,color:#ffffff
+    style F fill:#7c3aed,color:#ffffff
+```
+
+### 🧭 **Navigation System Guide**
+
+#### **Main Navigation Bar**
+- **Location**: Fixed top of all pages
+- **Width**: Full screen responsive (spans entire viewport)
+- **Elements**:
+  - `EDGERACK` brand logo (left)
+  - Navigation links: Home, Cooling Unit, Admin, Config, Upgrade
+  - Login button (right)
+- **Mobile**: Collapsible hamburger menu for small screens
+
+#### **Navigation States**
+```mermaid
+stateDiagram-v2
+    [*] --> Desktop
+    [*] --> Mobile
+    
+    Desktop --> ActiveLink: Click Navigation
+    Desktop --> LoginModal: Click Login
+    
+    Mobile --> MenuClosed: Default State
+    MenuClosed --> MenuOpen: Tap Menu Icon
+    MenuOpen --> MenuClosed: Tap Menu Icon
+    MenuOpen --> ActiveLink: Select Page
+    
+    ActiveLink --> [*]: Page Loads
+    LoginModal --> Authenticated: Successful Login
+    LoginModal --> [*]: Cancel/Close
+    Authenticated --> [*]: Access Granted
+```
+
+## 📱 Page-by-Page UI Elements Guide
 
 ### 🏠 **HomeView (/) - Main Dashboard**
-**Purpose**: Comprehensive system overview with real-time monitoring
 
-**Key Features**:
-- **Expand All Controls**: Toggle all sections simultaneously
-- **Cabinet Signals**: Door sensors, alarms, and security status
-- **Cooling Unit Metrics**: Live temperature, pressure, and fan data
-- **Network Information**: Primary/secondary network status and NTP sync
-- **System Information**: CPU usage, memory, and storage metrics
+#### **Page Layout Structure**
+```
+┌─────────────────────────────────────────────┐
+│ Navigation Bar                               │
+├─────────────────────────────────────────────┤
+│ [Expand All] Button                (top-right)│
+├─────────────────────────────────────────────┤
+│ System Error Alert (if present)            │
+├─────────────────────────────────────────────┤
+│ ┌─ Cabinet Section ────────────────┐ [+/-] │
+│ │ • Door Sensor Status             │       │
+│ │ • Alarm Status                   │       │
+│ │ • Event Log Table               │       │
+│ └─────────────────────────────────┘       │
+├─────────────────────────────────────────────┤
+│ ┌─ Cooling Unit Section ──────────┐ [+/-] │
+│ │ • Machine Controls              │       │
+│ │ • Temperature Readings          │       │
+│ │ • Fan Speed Monitoring          │       │
+│ └─────────────────────────────────┘       │
+├─────────────────────────────────────────────┤
+│ ┌─ Networking Section ────────────┐ [+/-] │
+│ │ • Primary/Secondary Link Status │       │
+│ │ • IP Configuration Display      │       │
+│ │ • NTP Synchronization Status    │       │
+│ └─────────────────────────────────┘       │
+├─────────────────────────────────────────────┤
+│ ┌─ System Section ────────────────┐ [+/-] │
+│ │ • CPU Usage Monitoring          │       │
+│ │ • Memory Usage Display          │       │
+│ │ • System Performance Metrics    │       │
+│ └─────────────────────────────────┘       │
+└─────────────────────────────────────────────┘
+```
 
-**User Interactions**:
-- Expand/collapse individual sections
-- Real-time data updates every second
-- System alert notifications
-- Quick status overview
+#### **Interactive Controls**
+- **Expand All Button**: 
+  - Location: Top-right corner
+  - Function: Toggles all sections between expanded/collapsed
+  - Visual: "Expand All" / "Collapse All" text with outline styling
+  - Behavior: Changes all section states simultaneously
+
+- **Section Toggle Buttons**: 
+  - Location: Top-right of each section header
+  - Function: Individual section expand/collapse
+  - Visual: `[ + ]` (collapsed) / `[ - ]` (expanded)
+  - Behavior: Smooth animation transition
+
+- **Status Badges**:
+  - Green: Operational/Active/Normal status
+  - Red: Error/Inactive/Alarm conditions
+  - Blue: Information/Configuration states
+  - Yellow: Warning/Caution conditions
+
+#### **Real-time Data Elements**
+- **Update Frequency**: Every 1 second
+- **Temperature Displays**: Large numeric values with units
+- **Fan Speed Monitors**: RPM values with real-time changes
+- **Status Indicators**: Color-coded badges that change state
+- **Last Updated Timestamp**: Shows data freshness
+
+#### **Machine Control Elements** (Login Required)
+```mermaid
+flowchart LR
+    A[Machine Control Panel] --> B{User Logged In?}
+    B -->|Yes| C[Active Controls]
+    B -->|No| D[Login Message]
+    
+    C --> E[Machine Toggle]
+    C --> F[Supply Air Target]
+    C --> G[Return Air Target]
+    
+    E --> H[ON/OFF Switch]
+    F --> I[Temperature Input]
+    G --> J[Temperature Input]
+    
+    style A fill:#2563eb,color:#ffffff
+    style C fill:#059669,color:#ffffff
+    style D fill:#dc2626,color:#ffffff
+```
+
+### ❄️ **CoolingView (/cooling) - Technical Readings**
+
+#### **Page Layout Structure**
+```
+┌─────────────────────────────────────────────┐
+│ Header: "Cooling Unit Readings:"            │
+│                            [Expand All] Button│
+├─────────────────────────────────────────────┤
+│ Last Updated: 2025-01-05 17:30:45          │
+│ MODBUS: [Connected]                         │
+├─────────────────────────────────────────────┤
+│ ┌─ States Section ────────────────┐ [+/-] │
+│ │ Compressor: [ON/OFF]            │       │
+│ │ Heating: [ENABLED/DISABLED]     │       │
+│ │ Cooling: [ACTIVE/INACTIVE]      │       │
+│ │ Alarm: [NORMAL/TRIGGERED]       │       │
+│ └─────────────────────────────────┘       │
+├─────────────────────────────────────────────┤
+│ ┌─ Values Section ────────────────┐ [+/-] │
+│ │ Supply Air Temp: 65.2°F        │       │
+│ │ Return Air Temp: 78.5°F        │       │
+│ │ Suction Temperature: 67.3°F     │       │
+│ │ High Pressure: 245.8 PSI       │       │
+│ │ Low Pressure: 10.2 PSI         │       │
+│ │ Internal Fan: 2450 RPM         │       │
+│ │ External Fan: 5130 RPM         │       │
+│ │ Condenser Motor: 1891 RPM      │       │
+│ └─────────────────────────────────┘       │
+└─────────────────────────────────────────────┘
+```
+
+#### **Technical Data Elements**
+- **States Display**: Boolean indicators with color coding
+- **Temperature Values**: Precise decimal readings with units
+- **Pressure Readings**: PSI values for system monitoring
+- **RPM Displays**: Motor and fan speed monitoring
+- **MODBUS Status**: Communication health indicator
+
+#### **Default Behavior**
+- All sections expanded by default for immediate technical access
+- Real-time updates maintain expanded state
+- Professional industrial formatting for technical staff
+
+### 👥 **AdminView (/user) - Administration Dashboard**
+
+#### **Tabbed Interface Structure**
+```
+┌─────────────────────────────────────────────┐
+│ Tab Navigation: [Users] [Logs] [Backup]     │
+├─────────────────────────────────────────────┤
+│ Users Tab Content:                          │
+│ ┌─ User Management Table ──────────────┐   │
+│ │ Username | Role | Last Login | Status │   │
+│ │ admin    | Admin| 2025-01-05 | Active │   │
+│ │ operator1| Oper.| 2025-01-05 | Active │   │
+│ │ [Edit]   [Edit] [Edit]      [Edit]   │   │
+│ └─────────────────────────────────────┘   │
+│ [Add New User] Button                      │
+├─────────────────────────────────────────────┤
+│ Logs Tab Content:                          │
+│ [Export Logs] [Clear Old Logs]            │
+│ ┌─ System Logs Table ─────────────────┐   │
+│ │ Timestamp | Level | Message          │   │
+│ │ Recent log entries...                │   │
+│ └─────────────────────────────────────┘   │
+├─────────────────────────────────────────────┤
+│ Backup Tab Content:                        │
+│ ┌─ Create Backup ─┐ ┌─ Restore Backup ─┐ │
+│ │ [Full Backup]   │ │ [Choose File]     │ │
+│ │ [Config Backup] │ │ [Restore]         │ │
+│ └─────────────────┘ └─────────────────────┘ │
+│ Recent Backups List                        │
+└─────────────────────────────────────────────┘
+```
+
+#### **Administrative Controls**
+- **User Management**: Add, edit, delete user accounts
+- **Role Assignment**: Administrator, Operator, Maintenance, Viewer roles
+- **System Logging**: Export logs in various formats
+- **Backup Operations**: Create full/config backups, restore from files
+- **Activity Monitoring**: Real-time user session tracking
+
+#### **Security Features**
+- Login required for all administrative functions
+- Role-based access control
+- Audit trail for all administrative actions
+- Session timeout and management
+
+### ⚙️ **ConfigView (/config) - System Configuration**
+
+#### **Configuration Categories Workflow**
+```mermaid
+flowchart TD
+    A[Configuration Dashboard] --> B[General Settings]
+    A --> C[Cooling Settings]
+    A --> D[Network Settings]
+    A --> E[Administration]
+    
+    B --> B1[Temperature Units]
+    B --> B2[Time Zone]
+    B --> B3[NTP Settings]
+    
+    C --> C1[Setpoints]
+    C --> C2[Thresholds]
+    C --> C3[Control Parameters]
+    
+    D --> D1[IP Configuration]
+    D --> D2[DNS Settings]
+    D --> D3[Gateway Setup]
+    
+    E --> E1[Event Logs]
+    E --> E2[System Preferences]
+    E --> E3[Maintenance Settings]
+    
+    style A fill:#2563eb,color:#ffffff
+    style B fill:#059669,color:#ffffff
+    style C fill:#dc2626,color:#ffffff
+    style D fill:#7c3aed,color:#ffffff
+    style E fill:#ea580c,color:#ffffff
+```
+
+#### **Form Control Elements**
+- **Dropdown Selectors**: Temperature units, time zones
+- **Toggle Switches**: Enable/disable features
+- **Text Inputs**: IP addresses, server names
+- **Number Inputs**: Setpoints, thresholds
+- **File Selectors**: Configuration imports
+- **Action Buttons**: Save, Reset, Apply settings
+
+#### **Settings Persistence**
+- Real-time validation of form inputs
+- Immediate feedback on setting changes
+- Confirmation dialogs for critical changes
+- Auto-save functionality for certain settings
+
+### 🔧 **UpgradeView (/upgrade) - System Management**
+
+#### **Upgrade Interface Elements**
+- **Current Version Display**: Shows installed firmware version
+- **Update Check Button**: Manually check for available updates
+- **Upgrade Progress Bar**: Visual feedback during updates
+- **System Diagnostics Panel**: Health check results
+- **Maintenance Schedule**: Upcoming maintenance windows
+- **Hardware Status Grid**: Component health monitoring
+
+#### **Diagnostic Controls**
+- **Run Diagnostics**: Comprehensive system health check
+- **Component Testing**: Individual hardware component tests
+- **Performance Monitoring**: Real-time system performance metrics
+- **Log Analysis**: Automated log analysis and recommendations
+
+## 🎮 Control Features Deep Dive
+
+### 🔄 **Real-time Update System**
+
+```mermaid
+sequenceDiagram
+    participant U as UI Component
+    participant Q as Query Cache
+    participant API as Backend API
+    participant D as Data Generator
+    
+    Note over U,D: Initialization
+    U->>Q: Subscribe to data
+    Q->>API: Initial request
+    API->>D: Generate data
+    D-->>API: Return fresh data
+    API-->>Q: JSON response
+    Q-->>U: Update UI
+    
+    Note over U,D: Continuous Updates
+    loop Every 1 second
+        Q->>API: Poll for updates
+        API->>D: Get new data
+        D-->>API: Updated values
+        API-->>Q: Cache update
+        Q-->>U: Re-render components
+        U->>U: Smooth transitions
+    end
+```
+
+### 🎯 **Interactive Control States**
+
+#### **Button States & Behaviors**
+- **Default State**: Normal appearance, clickable
+- **Hover State**: Color change, cursor pointer
+- **Active State**: Pressed appearance during interaction
+- **Disabled State**: Grayed out, non-interactive (when login required)
+- **Loading State**: Spinner or progress indicator during operations
+
+#### **Expandable Section Mechanics**
+- **Collapsed**: Content hidden, `[ + ]` icon visible
+- **Expanded**: Full content displayed, `[ - ]` icon visible
+- **Transition**: Smooth CSS animation (500ms duration)
+- **State Persistence**: Remembers user preferences during session
+
+#### **Status Badge System**
+- **Green Badge**: Operational, Connected, Active, Normal
+- **Red Badge**: Error, Disconnected, Inactive, Alarm
+- **Blue Badge**: Information, Configuration, Processing
+- **Yellow Badge**: Warning, Caution, Maintenance Required
+
+### 🔐 **Authentication-Controlled Features**
+
+```mermaid
+flowchart LR
+    A[User Action] --> B{Authentication Check}
+    B -->|Authenticated| C[Allow Action]
+    B -->|Not Authenticated| D[Show Login Modal]
+    
+    C --> E[Execute Function]
+    D --> F[Login Form]
+    F --> G{Credentials Valid?}
+    G -->|Yes| H[Set Auth State]
+    G -->|No| I[Show Error]
+    H --> E
+    I --> F
+    
+    style A fill:#2563eb,color:#ffffff
+    style C fill:#059669,color:#ffffff
+    style D fill:#dc2626,color:#ffffff
+    style E fill:#7c3aed,color:#ffffff
+```
+
+### 📊 **Data Visualization Controls**
+
+#### **Metric Display Types**
+- **Large Numbers**: Primary system values (temperatures, pressures)
+- **Status Indicators**: Boolean states with color coding  
+- **Progress Bars**: Percentage-based values (CPU usage, memory)
+- **Trend Indicators**: Historical data context
+- **Alert Banners**: Critical system notifications
+
+#### **Responsive Design Breakpoints**
+- **Mobile (< 768px)**: Single column layout, stacked sections
+- **Tablet (768px - 1024px)**: Two-column grid for better space usage
+- **Desktop (> 1024px)**: Full multi-column layout with optimal spacing
+- **Ultra-wide (> 1440px)**: Enhanced spacing, larger data displays
+
+## 🎛️ **Help & User Assistance Features**
+
+### 💡 **Built-in Help Elements**
+- **Tooltip Hover**: Contextual help on complex UI elements
+- **Status Messages**: Real-time feedback for user actions
+- **Error Handling**: Clear error messages with suggested solutions
+- **Loading States**: Visual feedback during data operations
+- **Validation Messages**: Immediate form input validation
+
+### 📋 **User Guidance System**
+- **Default Credentials**: `admin` / `enconnex` for initial access
+- **Navigation Hints**: Active page highlighting in navigation
+- **State Persistence**: UI preferences maintained during session
+- **Responsive Feedback**: Immediate visual response to interactions
+- **Accessibility Support**: Keyboard navigation and screen reader compatibility
 
 ### ❄️ **CoolingView (/cooling) - Technical Readings**
 **Purpose**: Detailed technical monitoring for cooling system operators
@@ -762,17 +1154,188 @@ VITE_API_BASE_URL=https://your-domain.com
 - **Changelog**: Document all significant changes
 - **API Documentation**: Maintain accurate API docs
 
+## 🎓 **User Training & Help System**
+
+### 🚀 **Quick Start Tutorial**
+
+```mermaid
+journey
+    title New User Onboarding Journey
+    section First Access
+      Open Application: 5: User
+      View Dashboard: 4: User
+      Try Navigation: 3: User
+    section Authentication
+      Click Login: 5: User
+      Enter Credentials: 4: User
+      Access Features: 5: User
+    section Exploration
+      Expand Sections: 5: User
+      Monitor Data: 5: User
+      Configure Settings: 4: User
+    section Mastery
+      Use Admin Panel: 5: Admin
+      Export Data: 4: Admin
+      Manage System: 5: Admin
+```
+
+### 📚 **Feature Discovery Guide**
+
+#### **Level 1: Basic Monitoring**
+1. **Dashboard Overview**: Navigate to Home (/) page
+2. **Real-time Data**: Watch live updates every second
+3. **Section Navigation**: Use expand/collapse controls
+4. **Status Understanding**: Learn color-coded badges
+5. **Mobile Usage**: Access via mobile devices
+
+#### **Level 2: Technical Analysis**
+1. **Cooling Details**: Navigate to Cooling (/cooling) page
+2. **Technical Readings**: Monitor precise values
+3. **System States**: Understand operational modes
+4. **MODBUS Status**: Check communication health
+5. **Historical Context**: Review timestamp data
+
+#### **Level 3: System Administration**
+1. **Authentication**: Login with credentials
+2. **User Management**: Access Admin (/user) page
+3. **System Configuration**: Modify settings in Config (/config)
+4. **Backup Operations**: Create and restore backups
+5. **Log Analysis**: Export and review system logs
+
+### 🔧 **Troubleshooting Guide**
+
+#### **Common Issues & Solutions**
+
+```mermaid
+flowchart TD
+    A[Issue Detected] --> B{Issue Type}
+    
+    B -->|Data Not Loading| C[Check Network Connection]
+    B -->|Login Failed| D[Verify Credentials]
+    B -->|Page Not Found| E[Check URL/Navigation]
+    B -->|Slow Performance| F[Check Browser/System]
+    
+    C --> C1[Refresh Browser]
+    C --> C2[Check Internet]
+    C --> C3[Contact IT Support]
+    
+    D --> D1[Try admin/enconnex]
+    D --> D2[Check Caps Lock]
+    D --> D3[Contact Administrator]
+    
+    E --> E1[Use Navigation Menu]
+    E --> E2[Return to Home Page]
+    E --> E3[Clear Browser Cache]
+    
+    F --> F1[Close Other Tabs]
+    F --> F2[Update Browser]
+    F --> F3[Restart Application]
+    
+    style A fill:#dc2626,color:#ffffff
+    style B fill:#2563eb,color:#ffffff
+    style C1,D1,E1,F1 fill:#059669,color:#ffffff
+```
+
+#### **Error Message Reference**
+- **"Authentication Required"**: Login needed for admin functions
+- **"Data Loading..."**: System fetching real-time information
+- **"Connection Lost"**: Network connectivity issue
+- **"Invalid Credentials"**: Username/password incorrect
+- **"Access Denied"**: Insufficient user permissions
+
+### 🎯 **Best Practices Guide**
+
+#### **Efficient Monitoring Workflow**
+1. **Start with Overview**: Begin at Home dashboard for system status
+2. **Drill Down**: Navigate to specific pages for detailed analysis  
+3. **Use Expand All**: Quickly view all data with single click
+4. **Monitor Timestamps**: Verify data freshness and updates
+5. **Check Status Badges**: Quickly identify issues or normal operation
+
+#### **Administrative Best Practices**
+1. **Regular Backups**: Create system backups before major changes
+2. **User Management**: Assign appropriate roles for security
+3. **Log Monitoring**: Regularly export and review system logs
+4. **Configuration Changes**: Test settings in development first
+5. **Security Hygiene**: Change default passwords immediately
+
+### 🎨 **Customization Options**
+
+#### **User Interface Preferences**
+- **Theme**: Professional dark theme optimized for industrial use
+- **Layout**: Responsive design adapts to screen size automatically
+- **Navigation**: Full-width responsive navigation bar
+- **Data Display**: Large, readable fonts for industrial environments
+- **Status Colors**: Industry-standard color coding for quick recognition
+
+#### **Accessibility Features**
+- **Keyboard Navigation**: Full keyboard support for all functions
+- **Screen Reader**: Compatible with assistive technologies
+- **High Contrast**: Dark theme provides excellent contrast
+- **Responsive Text**: Scalable fonts for various viewing conditions
+- **Touch Friendly**: Mobile-optimized touch targets
+
+### 📊 **Performance Optimization Tips**
+
+#### **Browser Optimization**
+- **Recommended Browsers**: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
+- **Browser Settings**: Enable JavaScript and cookies
+- **Cache Management**: Clear browser cache if experiencing issues
+- **Extension Conflicts**: Disable ad blockers if needed
+- **Multiple Tabs**: Limit concurrent tabs for optimal performance
+
+#### **Network Considerations**
+- **Bandwidth**: Minimum 1 Mbps for real-time updates
+- **Latency**: Lower latency improves responsiveness
+- **Firewall**: Ensure port 5000 is accessible
+- **VPN**: May impact real-time update frequency
+- **Mobile Data**: Monitor data usage on cellular connections
+
+### 🔒 **Security Guidelines**
+
+#### **User Security Practices**
+- **Password Policy**: Use strong, unique passwords
+- **Session Management**: Log out when finished
+- **Shared Computers**: Never save credentials on public machines
+- **Access Control**: Only request necessary permissions
+- **Regular Updates**: Keep browser updated for security patches
+
+#### **Administrator Security**
+- **Role Assignment**: Follow principle of least privilege
+- **Audit Trails**: Regular review of user activity logs
+- **Backup Security**: Secure backup files appropriately
+- **Network Security**: Monitor for unauthorized access attempts
+- **Update Management**: Keep system updated with security patches
+
+### 🎮 **Advanced Features Guide**
+
+#### **Power User Shortcuts**
+- **Keyboard Navigation**: Tab through interactive elements
+- **Bulk Operations**: Use "Expand All" for efficient monitoring
+- **Direct URLs**: Bookmark specific pages for quick access
+- **Browser Refresh**: F5 for manual data refresh if needed
+- **Print Support**: Print-friendly layouts for documentation
+
+#### **Integration Capabilities**
+- **API Access**: RESTful endpoints for external integration
+- **Data Export**: CSV and JSON export formats available
+- **Backup Integration**: Automated backup scheduling possible
+- **External Monitoring**: SNMP and other protocols supported
+- **Custom Dashboards**: API allows custom interface development
+
 ---
 
 <div align="center">
 
 ### 🎯 **Ready to Monitor Your Cooling Systems?**
 
-**[Get Started](#-quick-start-guide)** • **[View API Docs](docs/API.md)** • **[Contributing Guide](docs/CONTRIBUTING.md)**
+**[Get Started](#-quick-start-guide)** • **[View UI Guide](#-complete-ui-elements--controls-guide)** • **[Troubleshooting](#-troubleshooting-guide)**
 
 *Built with ❤️ for industrial monitoring excellence*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
+**Default Login**: `admin` / `enconnex` | **Support**: [GitHub Issues](https://github.com/your-repo/issues) | **Documentation**: [Full Guide](#-table-of-contents)
 
 </div>
